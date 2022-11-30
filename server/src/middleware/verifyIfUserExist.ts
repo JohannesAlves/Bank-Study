@@ -25,7 +25,7 @@ async function verifyUserExist(request: Request, response: Response, next: NextF
             next();
         }
     } catch (error) {
-        response.status(400).json({ message: "Internal server error in try to signup." });
+        return response.status(400).json({ message: "Internal server error in try to signup." });
     }
 }
 
