@@ -14,7 +14,7 @@ async function verifyBalanceAccount(request: Request, response: Response, next: 
 
     const account = await prisma.account.findUnique({
         where: {
-            accountNumber: fromAccountId,
+            accountId: fromAccountId,
         },
     });
 

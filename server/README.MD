@@ -14,3 +14,8 @@
     4. Modelagem do schema para depósitos -> Não finalizado
     5. Não deve ser possível aceitar valores negativo nas contas -> Não finalizado
     6. Cada depósito não pode ser maior do que 2.000 -> Não finalizado
+
+### Ficou faltando || Necessário rever.
+
+       1. Validar decimais (typescript)
+       2. Verificar se o valor é zero no middleware.
