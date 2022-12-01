@@ -12,6 +12,14 @@ interface ITransferData {
 const TransferController = async (request: Request, response: Response) => {
     const { fromAccountId, toAccountId, amount }: ITransferData = request.body;
 
+    if (!fromAccountId || !toAccountId || !amount) {
+        return response.status(406).json({ message: "U can't send data empty to transfer." });
+    }
+
+    if (amount <= 0) {
+        return response.status(406).json({ message: "Transfer's can't be negative." });
+    }
+
     try {
         const transfer = await prisma.transfer.create({
             data: {
