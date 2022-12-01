@@ -13,7 +13,7 @@
     3. Verificar se o usuário tem saldo para realizar a transferência -> Ok
     4. Modelagem do schema para depósitos -> Ok
     5. Não deve ser possível aceitar valores negativo nas contas -> Ok
-    6. Cada depósito não pode ser maior do que 2.000 -> Não finalizado
+    6. Cada depósito não pode ser maior do que 2.000 -> Ok
 
 ### Adicionais
 
