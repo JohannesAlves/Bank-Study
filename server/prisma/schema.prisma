@@ -17,12 +17,14 @@ model User {
   balanceId String   @unique
   createdAt DateTime @default(now())
 
-  balanceUser BalanceUser @relation(fields: [balanceId], references: [id])
+  Account Account?
 }
 
-model BalanceUser {
-  id      String  @id @unique @default(cuid())
-  balance Decimal @default(0)
+model Account {
+  idAccount     String  @id @unique @default(cuid())
+  accountNumber String  @unique @default(cuid())
+  balance       Decimal
+  userId        String  @unique
 
-  User User?
+  user User @relation(fields: [userId], references: [id])
 }
