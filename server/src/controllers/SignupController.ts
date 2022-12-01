@@ -23,23 +23,23 @@ const SignupController = async (request: Request, response: Response) => {
     }
 
     try {
-        const createBalanceToUser = await prisma.balanceUser.create({
-            data: {
-                balance: 0.0,
-            },
-        });
-
         const signupUser = await prisma.user.create({
             data: {
                 cpf,
                 fullname,
-                balanceId: createBalanceToUser.id,
+            },
+        });
+
+        const createAccount = await prisma.account.create({
+            data: {
+                balance: 0,
+                userId: signupUser.id,
             },
         });
 
         response.status(201).json({
             message: "Account Created Sucesfull!",
-            data: { balance: createBalanceToUser.balance },
+            data: { balance: createAccount.balance },
         });
     } catch (error) {
         console.log(error);
