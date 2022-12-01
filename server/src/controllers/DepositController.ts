@@ -15,6 +15,10 @@ const DepositController = async (request: Request, response: Response) => {
         return response.status(400).json({ deposit: false, message: "U can't send data empty" });
     }
 
+    if (amount <= 0) {
+        return response.status(406).json({ deposit: false, message: "Deposits can't be negative." });
+    }
+
     const deposit = await prisma.depositHistory.create({
         data: {
             amount,
