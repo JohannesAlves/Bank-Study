@@ -15,12 +15,10 @@ const DepositController = async (request: Request, response: Response) => {
         return response.status(400).json({ deposit: false, message: "U can't send data empty" });
     }
 
-    const deposit = await prisma.account.update({
-        where: {
-            accountId: toAccountId,
-        },
+    const deposit = await prisma.depositHistory.create({
         data: {
-            balance: amount,
+            amount,
+            toAccountId,
         },
     });
 
