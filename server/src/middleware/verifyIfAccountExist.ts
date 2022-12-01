@@ -6,14 +6,15 @@ const prisma = new PrismaClient();
 
 interface IVerifyData {
     toAccountId: string;
+    fromAccountId: string;
 }
 
 async function verifyIfAccountExist(request: Request, response: Response, next: NextFunction) {
-    const { toAccountId }: IVerifyData = request.body;
+    const { toAccountId, fromAccountId }: IVerifyData = request.body;
 
     const account = await prisma.account.findUnique({
         where: {
-            accountId: toAccountId,
+            accountId: toAccountId || fromAccountId,
         },
     });
 
