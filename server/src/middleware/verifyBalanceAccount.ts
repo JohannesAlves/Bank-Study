@@ -27,6 +27,8 @@ async function verifyBalanceAccount(request: Request, response: Response, next: 
             .status(406)
             .json({ transatcion: false, message: "U don't have balance to make this transaction." });
     }
+
+    next();
 }
 
 export { verifyBalanceAccount };
