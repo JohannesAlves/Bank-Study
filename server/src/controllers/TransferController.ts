@@ -15,9 +15,9 @@ const TransferController = async (request: Request, response: Response) => {
     try {
         const transfer = await prisma.transfer.create({
             data: {
-                amount,
                 fromAccountId,
                 toAccountId,
+                amount,
             },
         });
 
