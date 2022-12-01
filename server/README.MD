@@ -18,4 +18,4 @@
 ### Ficou faltando || Necessário rever.
 
        1. Validar decimais (typescript)
-       2. Verificar se o valor é zero no middleware.
+       2. Verificar se o valor é zero no middleware verifyBalanceAccount.
