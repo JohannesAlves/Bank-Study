@@ -21,6 +21,18 @@ const TransferController = async (request: Request, response: Response) => {
             },
         });
 
+        // verify if it's a good pratic.
+        const removeBalanceAmount = await prisma.account.update({
+            where: {
+                accountId: transfer.fromAccountId,
+            },
+            data: {
+                balance: {
+                    decrement: amount,
+                },
+            },
+        });
+
         return response.status(202).json({
             transfer: true,
             message: "Transfer with sucessful!",
@@ -30,7 +42,8 @@ const TransferController = async (request: Request, response: Response) => {
                 toAccountId: transfer.toAccountId,
             },
         });
-    } catch {
+    } catch (error) {
+        console.log(error);
         return response.status(500).json({ message: "Internal server error when try transfer amount." });
     }
 };
