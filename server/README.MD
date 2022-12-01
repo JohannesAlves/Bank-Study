@@ -19,3 +19,4 @@
 
        1. Validar decimais (typescript)
        2. Verificar se o valor é zero no middleware verifyBalanceAccount.
+       3. Verificar se a conta de destino existe.
