@@ -12,6 +12,8 @@ interface ISignupData {
 const SignupController = async (request: Request, response: Response) => {
     const { cpf, fullname }: ISignupData = request.body;
 
+    const cpfWithoutMasks = cpf.replace(/[^\d]+/g, "");
+
     if (!cpf || !fullname) {
         response.status(401).json({ message: "U can't send data empty." });
         return;
@@ -25,7 +27,7 @@ const SignupController = async (request: Request, response: Response) => {
     try {
         const signupUser = await prisma.user.create({
             data: {
-                cpf,
+                cpf: cpfWithoutMasks,
                 fullname,
             },
         });
