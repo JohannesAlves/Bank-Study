@@ -20,6 +20,10 @@ const TransferController = async (request: Request, response: Response) => {
         return response.status(406).json({ message: "Transfer's can't be negative." });
     }
 
+    if (amount > 2000) {
+        return response.status(406).json({ deposit: false, message: "Transfer's can't be more than $2000" });
+    }
+
     try {
         const transfer = await prisma.transfer.create({
             data: {
