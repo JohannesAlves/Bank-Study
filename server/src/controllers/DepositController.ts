@@ -19,6 +19,10 @@ const DepositController = async (request: Request, response: Response) => {
         return response.status(406).json({ deposit: false, message: "Deposits can't be negative." });
     }
 
+    if (amount > 2000) {
+        return response.status(406).json({ deposit: false, message: "Deposit's can't be more than $2000" });
+    }
+
     const deposit = await prisma.depositHistory.create({
         data: {
             amount,
