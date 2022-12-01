@@ -32,7 +32,7 @@ model Account {
 model Transfer {
   idTransfer    String  @id @unique @default(cuid())
   fromAccountId String  @unique
-  toAccountId   String  @unique
+  toAccountId   String
   amount        Decimal
 
   fromAccount Account @relation(fields: [fromAccountId], references: [accountId])
