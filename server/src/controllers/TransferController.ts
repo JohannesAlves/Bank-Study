@@ -40,6 +40,7 @@ const TransferController = async (request: Request, response: Response) => {
                 idTransfer: transfer.idTransfer,
                 fromAccountId: transfer.fromAccountId,
                 toAccountId: transfer.toAccountId,
+                amount: transfer.amount,
             },
         });
     } catch (error) {
