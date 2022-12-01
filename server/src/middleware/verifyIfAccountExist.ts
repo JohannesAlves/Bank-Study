@@ -11,9 +11,15 @@ interface IVerifyData {
 async function verifyIfAccountExist(request: Request, response: Response, next: NextFunction) {
     const { toAccountId }: IVerifyData = request.body;
 
-    const middlewareVerifyAccount = await prisma.account.findUnique({
+    const account = await prisma.account.findUnique({
         where: {
             accountId: toAccountId,
         },
     });
+
+    if (!account) {
+        return response.status(404).json({ message: "Account not found." });
+    } else {
+        next();
+    }
 }
