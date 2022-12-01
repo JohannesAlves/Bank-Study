@@ -33,6 +33,17 @@ const TransferController = async (request: Request, response: Response) => {
             },
         });
 
+        const updateBalanceAccount = await prisma.account.update({
+            where: {
+                accountId: transfer.toAccountId,
+            },
+            data: {
+                balance: {
+                    increment: transfer.amount,
+                },
+            },
+        });
+
         return response.status(202).json({
             transfer: true,
             message: "Transfer with sucessful!",
