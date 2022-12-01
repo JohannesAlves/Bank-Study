@@ -21,3 +21,8 @@
     Transferências: `http://localhost:3333/transfer`
     Registro: `http://localhost:3333/signup`
     Login: `http://localhost:3333/login`
+
+### Colors
+
+    1. Orange: orange-500
+    1. Zinc: zinc-800
