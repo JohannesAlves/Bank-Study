@@ -25,7 +25,7 @@ async function verifyBalanceAccount(request: Request, response: Response, next: 
     if (account.balance < amount) {
         return response
             .status(406)
-            .json({ transatcion: false, message: "U don't have balance to make this transaction." });
+            .json({ transaction: false, message: "U don't have balance to make this transaction." });
     }
 
     next();
