@@ -22,5 +22,18 @@ const DepositController = async (request: Request, response: Response) => {
         },
     });
 
+    const depositInAccount = await prisma.account.update({
+        where: {
+            accountId: toAccountId,
+        },
+        data: {
+            balance: {
+                increment: deposit.amount,
+            },
+        },
+    });
+
     return response.status(200).json({ deposit: true, message: "Deposit sucessful!", data: {} });
 };
+
+export default DepositController;
