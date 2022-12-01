@@ -25,8 +25,9 @@ model Account {
   balance   Decimal
   userId    String  @unique
 
-  user     User       @relation(fields: [userId], references: [id])
-  Transfer Transfer[]
+  user           User             @relation(fields: [userId], references: [id])
+  Transfer       Transfer[]
+  DepositHistory DepositHistory[]
 }
 
 model Transfer {
@@ -36,4 +37,12 @@ model Transfer {
   amount        Decimal
 
   fromAccount Account @relation(fields: [fromAccountId], references: [accountId])
+}
+
+model DepositHistory {
+  idDeposit   String  @id @unique @default(cuid())
+  toAccountId String
+  amount      Decimal
+
+  toAccount Account @relation(fields: [toAccountId], references: [accountId])
 }
