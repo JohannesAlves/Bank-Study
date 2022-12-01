@@ -28,7 +28,7 @@ const TransferController = async (request: Request, response: Response) => {
             },
             data: {
                 balance: {
-                    decrement: amount,
+                    decrement: transfer.amount,
                 },
             },
         });
