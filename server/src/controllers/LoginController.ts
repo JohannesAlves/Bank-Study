@@ -16,9 +16,11 @@ const LoginController = async (request: Request, response: Response) => {
         return response.status(403).json({ message: "Invalid CPF!" });
     }
 
+    const cpfWithoutMasks = cpf.replace(/[^\d]+/g, "");
+
     const user = await prisma.user.findUnique({
         where: {
-            cpf,
+            cpf: cpfWithoutMasks,
         },
     });
 
