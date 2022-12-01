@@ -25,5 +25,15 @@ model Account {
   balance       Decimal
   userId        String  @unique
 
-  user User @relation(fields: [userId], references: [id])
+  user     User      @relation(fields: [userId], references: [id])
+  Transfer Transfer?
+}
+
+model Transfer {
+  idTransfer    String  @id @unique @default(cuid())
+  fromAccountId String  @unique
+  toAccountId   String  @unique
+  amount        Decimal
+
+  fromAccount Account @relation(fields: [fromAccountId], references: [accountNumber])
 }
