@@ -19,3 +19,5 @@ async function verifyBalanceAccount(request: Request, response: Response, next: 
 
     console.log(verifyBalance);
 }
+
+export { verifyBalanceAccount };

@@ -34,3 +34,5 @@ const TransferController = async (request: Request, response: Response) => {
         return response.status(500).json({ message: "Internal server error when try transfer amount." });
     }
 };
+
+export default TransferController;
