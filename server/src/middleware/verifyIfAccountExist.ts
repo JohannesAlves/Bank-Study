@@ -23,3 +23,5 @@ async function verifyIfAccountExist(request: Request, response: Response, next: 
         next();
     }
 }
+
+export { verifyIfAccountExist };
