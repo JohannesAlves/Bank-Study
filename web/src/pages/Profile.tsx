@@ -1,6 +1,6 @@
-import { NavIndex } from "../components/organisms/NavIndex";
+import { NavIndex } from "../components/organisms/ProfileIndex";
 import { Nav } from "../components/organisms/Nav";
-import { NavTransferHistory } from "../components/organisms/NavTransferHistory";
+import { NavTransferHistory } from "../components/organisms/ProfileTransferHistory";
 
 function Profile() {
     return (
