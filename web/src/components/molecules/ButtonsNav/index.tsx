@@ -1,6 +1,6 @@
 import ButtonNav from "../../atoms/ButtonNav";
 
-function ButtonsNav() {
+export function ButtonsNav() {
     return (
         <div className="flex flex-col space-y-4 mt-10 text-lg font-light">
             <ButtonNav btnText="Início" />
@@ -10,5 +10,3 @@ function ButtonsNav() {
         </div>
     );
 }
-
-export default ButtonsNav;

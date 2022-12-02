@@ -1,4 +1,4 @@
-import MainOrganism from "../components/organisms/MainOrganism/MainOrganism";
+import { MainOrganism } from "../components/organisms/MainOrganism";
 
 function Main() {
     return (

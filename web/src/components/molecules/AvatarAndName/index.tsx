@@ -1,6 +1,6 @@
 import AvatarImg from "../../atoms/AvatarImg";
 
-function AvatarAndName() {
+export function AvatarAndName() {
     return (
         <>
             <AvatarImg />
@@ -8,5 +8,3 @@ function AvatarAndName() {
         </>
     );
 }
-
-export default AvatarAndName;

@@ -1,7 +1,7 @@
-import AvatarAndName from "../../molecules/AvatarAndName/AvatarAndName";
-import ButtonsNav from "../../molecules/ButtonsNav/ButtonsNav";
+import { AvatarAndName } from "../../molecules/AvatarAndName";
+import { ButtonsNav } from "../../molecules/ButtonsNav";
 
-function NavOrganism() {
+export function NavOrganism() {
     return (
         <nav className="w-1/6 h-full bg-slate-200 rounded-lg flex flex-col  font-sans">
             <div className="text-center font-bold mt-2">
@@ -12,5 +12,3 @@ function NavOrganism() {
         </nav>
     );
 }
-
-export default NavOrganism;

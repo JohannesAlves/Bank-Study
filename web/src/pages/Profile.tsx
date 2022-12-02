@@ -1,4 +1,4 @@
-import NavOrganism from "../components/organisms/NavOrganism/NavOrganism";
+import { NavOrganism } from "../components/organisms/NavOrganism";
 
 function Profile() {
     return (

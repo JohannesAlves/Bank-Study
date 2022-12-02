@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { maskCPF } from "../../../utils/maskCPF";
-import { ButtonAndInput } from "../../molecules/ButtonAndInput/ButtonAndInput";
-import TitlesMain from "../../molecules/TitlesMain/TitlesMain";
+import { ButtonAndInput } from "../../molecules/ButtonAndInput";
+import { TitlesMain } from "../../molecules/TitlesMain";
 
-function MainOrganism() {
+export function MainOrganism() {
     const [value, setValue] = useState("");
 
     function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
@@ -19,5 +19,3 @@ function MainOrganism() {
         </div>
     );
 }
-
-export default MainOrganism;

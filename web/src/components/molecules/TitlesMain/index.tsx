@@ -1,7 +1,7 @@
 import { Subtitle } from "../../atoms/Subtitle";
 import { Title } from "../../atoms/Title";
 
-function TitlesMain() {
+export function TitlesMain() {
     return (
         <div>
             <Title title="👋 Olá, futuro(a) parceiro(a) de equipe" />
@@ -9,5 +9,3 @@ function TitlesMain() {
         </div>
     );
 }
-
-export default TitlesMain;
