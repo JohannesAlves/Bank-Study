@@ -1,6 +1,6 @@
 import { Subtitle } from "../../atoms/Subtitle";
 
-export function ProfileTranserHistory() {
+export function ProfileHistoric() {
     return (
         <>
             <div className="flex flex-col text-center mx-auto w-full lg:w-10/12 h-full overflow-auto lg:rounded-r-lg ">
