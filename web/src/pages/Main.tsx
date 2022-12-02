@@ -18,7 +18,7 @@ function Main() {
                     <div className="mt-10 text-center text-gray-200 drop-shadow-lg">
                         <div>
                             <h1 className="text-3xl">👋 Olá, futuro(a) parceiro(a) de equipe!</h1>
-                            <h2 className="text-3xl mt-5">Me informe o seu CPF</h2>
+                            <h2 className="text-3xl mt-5">Me informe o seu CPF ;)</h2>
                         </div>
 
                         <div className="flex flex-col w-full h-full	items-center">
@@ -52,9 +52,9 @@ function Main() {
                                     </svg>
                                 </span>
                                 <span className="absolute flex items-center justify-center w-full h-full text-orange-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                                    ENTRAR
+                                    VAMOS LÁ!
                                 </span>
-                                <span className="relative invisible">ENTRAR</span>
+                                <span className="relative invisible">VAMOS LÁ!</span>
                             </a>
                         </div>
                     </div>
