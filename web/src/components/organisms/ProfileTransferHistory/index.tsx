@@ -4,7 +4,7 @@ export function NavTransferHistory() {
     return (
         <>
             <div className="flex flex-col text-center mx-auto w-full lg:w-10/12  overflow-auto lg:rounded-r-lg ">
-                <table className="table-fixed  mx-auto font-sans">
+                <table className="table-fixed  mx-auto ">
                     <thead className="bg-orange-400">
                         <tr>
                             <th className="w-1/2">Tipo</th>
