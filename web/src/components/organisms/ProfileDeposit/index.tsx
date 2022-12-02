@@ -11,8 +11,14 @@ export function ProfileDeposit() {
                     </div>
 
                     <div>
-                        <Input />
+                        <Input placeholder="R$100,00" />
                     </div>
+                    <div className="mt-5 flex space-x-6">
+                        <Button btnText="R$100" />
+                        <Button btnText="R$200" />
+                        <Button btnText="R$300" />
+                    </div>
+
                     <Button btnText="DEPOSITAR" />
                 </div>
             </div>
