@@ -8,7 +8,7 @@ function Profile() {
         <>
             <div className="flex flex-col lg:flex-row h-full font-sans">
                 <Nav />
-                <ProfileDeposit />
+                <ProfileTranserHistory />
             </div>
         </>
     );
