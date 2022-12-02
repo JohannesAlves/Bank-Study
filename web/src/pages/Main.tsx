@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import woman from "../assets/woman.svg";
-import { maskCPF } from "../utils/maskCpf";
+import { maskCPF } from "../utils/maskCPF";
 
 function Main() {
     const [value, setValue] = useState("");
