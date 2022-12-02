@@ -2,7 +2,7 @@
 
 ### Tela Inicial
 
-    1. Campo para usuário colocar CPF.
+    1. Campo para usuário colocar CPF. -> Ok.
         1.1 Verificar se o CPF foi encontrado na API.
         1.2 Se for encontrado redirecionar para a tela do usuário.
         1.3 Se não for encontrado redirecionar para a tela de registro.
