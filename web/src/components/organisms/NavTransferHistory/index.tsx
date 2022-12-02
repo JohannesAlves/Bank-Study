@@ -7,9 +7,9 @@ export function NavTransferHistory() {
                 <table className="table-fixed  mx-auto font-sans">
                     <thead className="bg-orange-400">
                         <tr>
-                            <th className="w-1/2 ...">Tipo</th>
-                            <th className="w-1/2 ...">Data</th>
-                            <th className="w-1/2 ...">Valor</th>
+                            <th className="w-1/2">Tipo</th>
+                            <th className="w-1/2">Data</th>
+                            <th className="w-1/2 px-12">Valor</th>
                         </tr>
                     </thead>
                     <tbody>
