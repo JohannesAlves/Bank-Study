@@ -4,10 +4,10 @@ import Input from "../../atoms/Input";
 export function ProfileDeposit() {
     return (
         <>
-            <div className=" w-9/12 h-4/5 mx-auto mt-10 rounded-md">
+            <div className=" w-9/12 h-4/5 mx-auto mt-10 rounded-md overflow-auto">
                 <div className="flex flex-col justify-center items-center mt-8">
                     <div>
-                        <h2 className="text-3xl text-slate-300 font-bold"></h2>
+                        <h2 className="text-3xl text-orange-500 font-bold">Depósito</h2>
                     </div>
 
                     <div>
