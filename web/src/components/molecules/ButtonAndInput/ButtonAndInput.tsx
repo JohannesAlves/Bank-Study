@@ -1,5 +1,5 @@
-import { Button } from "../../atoms/button";
-import Input from "../../atoms/input";
+import { Button } from "../../atoms/Button";
+import Input from "../../atoms/Input";
 
 type Props = {
     handleOnChange: (event: React.FormEvent<HTMLInputElement>) => void;

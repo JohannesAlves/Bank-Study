@@ -1,4 +1,4 @@
-import AvatarImg from "../../atoms/avatarImg";
+import AvatarImg from "../../atoms/AvatarImg";
 
 function AvatarAndName() {
     return (

@@ -1,4 +1,4 @@
-import ButtonNav from "../../atoms/buttonNav";
+import ButtonNav from "../../atoms/ButtonNav";
 
 function ButtonsNav() {
     return (

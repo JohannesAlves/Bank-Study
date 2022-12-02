@@ -1,5 +1,5 @@
-import { Subtitle } from "../../atoms/subtitle";
-import { Title } from "../../atoms/title";
+import { Subtitle } from "../../atoms/Subtitle";
+import { Title } from "../../atoms/Title";
 
 function TitlesMain() {
     return (
