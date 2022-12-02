@@ -5,7 +5,7 @@ function TitlesMain() {
     return (
         <div>
             <Title title="👋 Olá, futuro(a) parceiro(a) de equipe" />
-            <Subtitle subtitle="Me informe o seu CPF ;)" />
+            <Subtitle subtitle="Me informe um CPF válido ;)" />
         </div>
     );
 }
