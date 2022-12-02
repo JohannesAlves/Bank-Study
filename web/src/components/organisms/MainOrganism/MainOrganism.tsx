@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { maskCPF } from "../../utils/maskCPF";
-import { ButtonAndInput } from "../molecules/ButtonAndInput/ButtonAndInput";
-import TitlesMain from "../molecules/TitlesMain/TitlesMain";
+import { maskCPF } from "../../../utils/maskCPF";
+import { ButtonAndInput } from "../../molecules/ButtonAndInput/ButtonAndInput";
+import TitlesMain from "../../molecules/TitlesMain/TitlesMain";
 
 function MainOrganism() {
     const [value, setValue] = useState("");

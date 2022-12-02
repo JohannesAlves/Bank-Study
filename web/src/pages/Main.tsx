@@ -1,18 +1,6 @@
-import React, { useState } from "react";
-import { maskCPF } from "../utils/maskCPF";
-import TitlesMain from "../components/molecules/TitlesMain/TitlesMain";
-import { ButtonAndInput } from "../components/molecules/ButtonAndInput/ButtonAndInput";
-import MainOrganism from "../components/organisms/MainOrganism";
+import MainOrganism from "../components/organisms/MainOrganism/MainOrganism";
 
 function Main() {
-    const [value, setValue] = useState("");
-
-    function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
-        const { value } = event.currentTarget;
-
-        setValue(maskCPF(value));
-    }
-
     return (
         <>
             <div className="bg-orange-500 w-screen h-screen fixed font-mono">
