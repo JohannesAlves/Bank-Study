@@ -5,7 +5,7 @@ import { NavTransferHistory } from "../components/organisms/ProfileTransferHisto
 function Profile() {
     return (
         <>
-            <div className="flex flex-row h-full">
+            <div className="flex flex-col lg:flex-row h-full">
                 <Nav />
                 <NavTransferHistory />
             </div>

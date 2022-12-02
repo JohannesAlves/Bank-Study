@@ -3,7 +3,7 @@ import { Subtitle } from "../../atoms/Subtitle";
 export function NavTransferHistory() {
     return (
         <>
-            <div className="flex flex-col text-center mx-auto w-10/12 overflow-auto rounded-r-lg ">
+            <div className="flex flex-col text-center mx-auto w-full lg:w-10/12  overflow-auto lg:rounded-r-lg ">
                 <table className="table-fixed  mx-auto font-sans">
                     <thead className="bg-orange-400">
                         <tr>
