@@ -26,3 +26,7 @@
 
     1. Orange: orange-500
     1. Zinc: zinc-800
+
+### Adicionais/Rever/Não esquecer.
+
+    1. Responsividade

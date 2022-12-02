@@ -4,7 +4,7 @@ import { Title } from "../components/atoms/title";
 function Profile() {
     return (
         <>
-            <nav className="w-1/6 h-full bg-slate-200 rounded-lg flex flex-col  font-sans ">
+            <nav className="w-1/6 h-full bg-slate-200 rounded-lg flex flex-col  font-sans">
                 {/* avatar img */}
                 <div className="overflow-hidden relative w-10 h-10 bg-gray-100 rounded-full dark:bg-gray-600 mt-3 mx-auto">
                     <svg
