@@ -9,11 +9,11 @@
 
 ### Tela do usuário
 
-    1. Campo com butões para o depósito, realizar a transferência e ver o histórico das suas transferências.
+    1. Campo com butões para o depósito, realizar a transferência e ver o histórico das suas transferências -> Ok.
 
 ### Tela de registro
 
-    1. Campo para o usuário colocar CPF e Nome Completo
+    1. Campo para o usuário colocar CPF e Nome Completo -> Ok.
 
 ### Api's
 
@@ -22,10 +22,9 @@
     Registro: `http://localhost:3333/signup`
     Login: `http://localhost:3333/login`
 
-### Colors
+### Start
 
-    1. Orange: orange-500
-    1. Zinc: zinc-800
+    1. Iniciar a consumir as APIs principais do Login.
 
 ### Adicionais/Rever/Não esquecer.
 
