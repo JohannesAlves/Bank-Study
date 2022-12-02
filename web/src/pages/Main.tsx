@@ -1,12 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import woman from "../assets/woman.svg";
 import { maskCPF } from "../utils/maskCpf";
 
 function Main() {
     const [value, setValue] = useState("");
 
-    function handleChangeMask(event) {
-        const { value } = event.target;
+    function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
+        const { value } = event.currentTarget;
 
         setValue(maskCPF(value));
     }
@@ -17,7 +17,7 @@ function Main() {
                 <main className="bg-zinc-800  bg-opacity-60 h-2/4  w-2/4 mx-auto mt-36 flex justify-center rounded-lg shadow-lg">
                     <div className="mt-10 text-center text-gray-200 drop-shadow-lg">
                         <div>
-                            <h1 className="text-3xl">👋 Olá, futuro parceiro(a) de equipe!</h1>
+                            <h1 className="text-3xl">👋 Olá, futuro(a) parceiro(a) de equipe!</h1>
                             <h2 className="text-3xl mt-5">Me informe o seu CPF</h2>
                         </div>
 
