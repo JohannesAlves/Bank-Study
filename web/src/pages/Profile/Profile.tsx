@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { ProfileIndex } from "../components/organisms/ProfileIndex";
-import { Nav } from "../components/organisms/Nav";
-import { ProfileHistoric } from "../components/organisms/ProfileHistoric";
-import { ProfileDeposit } from "../components/organisms/ProfileDeposit";
-import { ProfileTransfer } from "../components/organisms/ProfileTransfer";
+import { ProfileIndex } from "../../components/organisms/ProfileIndex";
+import { Nav } from "../../components/organisms/Nav";
+import { ProfileHistoric } from "../../components/organisms/ProfileHistoric";
+import { ProfileDeposit } from "../../components/organisms/ProfileDeposit";
+import { ProfileTransfer } from "../../components/organisms/ProfileTransfer";
 
 function Profile() {
     return (

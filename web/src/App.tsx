@@ -1,6 +1,6 @@
 import { Error404 } from "./pages/Error404";
 import Main from "./pages/Main/Main";
-import Profile from "./pages/Profile";
+import Profile from "./pages/Profile/Profile";
 import { Signup } from "./pages/Signup/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
