@@ -29,3 +29,4 @@
 ### Adicionais/Rever/Não esquecer.
 
     1. Responsividade
+    2. Protected Routes
