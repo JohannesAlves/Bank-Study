@@ -24,6 +24,7 @@ const AuthContext = createContext({} as IAuthContext);
 function AuthProvider({ children }: AuthContextProps) {
     const [user, setUser] = useState<IUser>({} as IUser);
     const token = localStorage.getItem("token");
+    const navigate = useNavigate();
 
     const handleLogin = async (cpf: string) => {
         const dataPost = {
@@ -34,6 +35,7 @@ function AuthProvider({ children }: AuthContextProps) {
             const response = await api.post("/login", dataPost);
             localStorage.setItem("token", response.data.token);
             setUser(response.data);
+            navigate("/profile");
         } catch (err) {
             throw new Error("Not authorized!");
         }
