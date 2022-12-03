@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button } from "../components/atoms/Button";
-import { maskCPF } from "../utils/maskCPF";
-import Input from "../components/atoms/Input";
+import { Button } from "../../components/atoms/Button";
+import { maskCPF } from "../../utils/maskCPF";
+import Input from "../../components/atoms/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 interface FormValues {
