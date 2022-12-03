@@ -18,7 +18,11 @@ function Main() {
                 <div className="flex flex-col w-full h-full	items-center">
                     <TitlesMain />
 
-                    <input className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"></input>
+                    <input
+                        onChange={handleChangeMask}
+                        value={value}
+                        className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
+                    />
                     <Button btnText="VAMOS LÁ!" />
                 </div>
             </div>
