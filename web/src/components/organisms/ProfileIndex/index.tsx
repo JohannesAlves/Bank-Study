@@ -1,4 +1,4 @@
-export function NavIndex() {
+export function ProfileIndex() {
     return (
         <div className="mx-auto mt-20 text-4xl text-center">
             <h3 className="text-slate-200">
