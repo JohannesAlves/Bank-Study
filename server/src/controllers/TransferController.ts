@@ -10,9 +10,9 @@ interface ITransferData {
 }
 
 const TransferController = async (request: Request, response: Response) => {
-    const { fromAccountId, toAccountId, amount }: ITransferData = request.body;
+    const { toAccountId, amount }: ITransferData = request.body;
 
-    if (!fromAccountId || !toAccountId || !amount) {
+    if (!toAccountId || !amount) {
         return response.status(406).json({ message: "U can't send data empty to transfer." });
     }
 
@@ -25,9 +25,24 @@ const TransferController = async (request: Request, response: Response) => {
     }
 
     try {
+        const { user } = response.locals;
+
+        const getAccount = await prisma.account.findUnique({
+            where: {
+                userId: user,
+            },
+            select: {
+                accountId: true,
+            },
+        });
+
+        if (!getAccount) {
+            return response.status(404).json({ message: "Account not found." });
+        }
+
         const transfer = await prisma.transfer.create({
             data: {
-                fromAccountId,
+                fromAccountId: getAccount.accountId,
                 toAccountId,
                 amount,
             },

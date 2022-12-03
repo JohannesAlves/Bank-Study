@@ -10,11 +10,25 @@ interface IAccountData {
 }
 
 async function verifyBalanceAccount(request: Request, response: Response, next: NextFunction) {
-    const { fromAccountId, amount }: IAccountData = request.body;
+    const { user } = response.locals;
+    const { amount }: IAccountData = request.body;
+
+    const getAccount = await prisma.account.findUnique({
+        where: {
+            userId: user,
+        },
+        select: {
+            accountId: true,
+        },
+    });
+
+    if (!getAccount) {
+        return response.status(404).json({ message: "Account not found." });
+    }
 
     const account = await prisma.account.findUnique({
         where: {
-            accountId: fromAccountId,
+            accountId: getAccount.accountId,
         },
     });
 
