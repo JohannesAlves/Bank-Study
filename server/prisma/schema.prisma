@@ -31,18 +31,20 @@ model Account {
 }
 
 model Transfer {
-  idTransfer    String  @id @unique @default(cuid())
+  idTransfer    String   @id @unique @default(cuid())
   fromAccountId String
   toAccountId   String
   amount        Decimal
+  createdAt     DateTime @default(now())
 
   fromAccount Account @relation(fields: [fromAccountId], references: [accountId])
 }
 
 model DepositHistory {
-  idDeposit   String  @id @unique @default(cuid())
+  idDeposit   String   @id @unique @default(cuid())
   toAccountId String
   amount      Decimal
+  createdAt   DateTime @default(now())
 
   toAccount Account @relation(fields: [toAccountId], references: [accountId])
 }
