@@ -10,7 +10,7 @@ export function Nav() {
         <nav className="w-full lg:w-1/6  h-full bg-slate-200 lg:rounded-l-lg flex flex-col">
             <div className="text-center font-bold mt-2">
                 <AvatarImg />
-                <h4>Johannes Oliveira Alves</h4>
+                <h4>{user.fullname}</h4>
             </div>
 
             <ButtonsNav />
