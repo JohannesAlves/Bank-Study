@@ -6,6 +6,6 @@ import { verifyBalanceAccount } from "../middleware/verifyBalanceAccount";
 import { verifyIfAccountExist } from "../middleware/verifyIfAccountExist";
 const TransferRoutes = Router();
 
-TransferRoutes.post("/transfer", auth, verifyIfAccountExist, verifyBalanceAccount, TransferController);
+TransferRoutes.post("/transfer", auth, verifyIfAccountExist, verifyBalanceAccount, getUserAccount, TransferController);
 
 export default TransferRoutes;

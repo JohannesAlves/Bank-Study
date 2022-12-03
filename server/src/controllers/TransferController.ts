@@ -25,24 +25,11 @@ const TransferController = async (request: Request, response: Response) => {
     }
 
     try {
-        const { user } = response.locals;
-
-        const getAccount = await prisma.account.findUnique({
-            where: {
-                userId: user,
-            },
-            select: {
-                accountId: true,
-            },
-        });
-
-        if (!getAccount) {
-            return response.status(404).json({ message: "Account not found." });
-        }
+        const { userAccount } = response.locals;
 
         const transfer = await prisma.transfer.create({
             data: {
-                fromAccountId: getAccount.accountId,
+                fromAccountId: userAccount.account,
                 toAccountId,
                 amount,
             },
