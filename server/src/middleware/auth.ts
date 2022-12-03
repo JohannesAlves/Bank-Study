@@ -8,22 +8,26 @@ interface IDecodedJWT extends jwt.JwtPayload {
 
 export function auth(request: Request, response: Response, next: NextFunction): void {
     const authHeader = request.headers.authorization;
+
     try {
         if (!authHeader) {
-            response.status(201).json({ message: "Usuário não autenticado." });
+            response.status(201).json({ message: "User not authenticated." });
             return;
         }
     } catch (error) {
         console.log(error);
     }
-    const [, token] = authHeader.split(" ");
 
-    try {
-        const decoded = <IDecodedJWT>jwt.verify(token, `${process.env.SECRET_TOKEN}`);
-        response.locals.id = decoded.id;
-        response.locals.fullname = decoded.fullname;
-        next();
-    } catch {
-        throw new Error("Token inválido.");
+    if (authHeader) {
+        const [, token] = authHeader.split(" ");
+
+        try {
+            const decoded = <IDecodedJWT>jwt.verify(token, `SECRET_KEY`);
+            response.locals.id = decoded.id;
+            response.locals.fullname = decoded.fullname;
+            next();
+        } catch {
+            throw new Error("Token inválido.");
+        }
     }
 }
