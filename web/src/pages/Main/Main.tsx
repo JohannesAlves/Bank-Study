@@ -1,10 +1,32 @@
 import { maskCPF } from "../../utils/maskCPF";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { TitlesMain } from "../../components/molecules/TitlesMain";
 import { Button } from "../../components/atoms/Button";
+import { AuthContext } from "../../context/AuthContext";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+interface FormValues {
+    cpf: string;
+}
+
+interface ConfigProps {
+    headers: {
+        authorization: string;
+    };
+}
 
 function Main() {
+    const { handleLogin } = useContext(AuthContext);
+    const { register, handleSubmit } = useForm<FormValues>();
     const [value, setValue] = useState("");
+
+    const onSubmit: SubmitHandler<FormValues> = async (data) => {
+        try {
+            const tryLogin = await handleLogin(data.cpf);
+        } catch {
+            alert("Algo de errado aconteceu!");
+        }
+    };
 
     function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
         const { value } = event.currentTarget;
@@ -18,12 +40,15 @@ function Main() {
                 <div className="flex flex-col w-full h-full	items-center">
                     <TitlesMain />
 
-                    <input
-                        onChange={handleChangeMask}
-                        value={value}
-                        className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
-                    />
-                    <Button btnText="VAMOS LÁ!" />
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input
+                            {...register("cpf")}
+                            onChange={handleChangeMask}
+                            value={value}
+                            className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
+                        />
+                        <Button btnText="VAMOS LÁ!" />
+                    </form>
                 </div>
             </div>
         </>

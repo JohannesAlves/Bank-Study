@@ -30,6 +30,7 @@ function AuthProvider({ children }: AuthContextProps) {
         const dataPost = {
             cpf,
         };
+
         try {
             const response = await api.post("/login", dataPost);
             // localStorage.setItem("token", response.token);
