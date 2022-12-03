@@ -4,7 +4,6 @@ import { Request, Response } from "express";
 const prisma = new PrismaClient();
 
 interface ITransferData {
-    fromAccountId: string;
     toAccountId: string;
     amount: number;
 }
@@ -27,13 +26,21 @@ const TransferController = async (request: Request, response: Response) => {
     try {
         const { userAccount } = response.locals;
 
+        if (!userAccount) {
+            return response.status(404).json({ message: "Account not found." });
+        }
+
         const transfer = await prisma.transfer.create({
             data: {
-                fromAccountId: userAccount.account,
+                fromAccountId: userAccount.accountId,
                 toAccountId,
                 amount,
             },
         });
+
+        if (!transfer) {
+            return response.status(500).json({ message: "Transfer fail." });
+        }
 
         // verify if it's a good pratic.
         const removeBalanceAmount = await prisma.account.update({
