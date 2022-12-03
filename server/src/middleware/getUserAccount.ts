@@ -14,9 +14,6 @@ const getUserAccount = async (request: Request, response: Response, next: NextFu
         where: {
             userId: user,
         },
-        select: {
-            accountId: true,
-        },
     });
 
     if (!getAccount) {
@@ -24,7 +21,7 @@ const getUserAccount = async (request: Request, response: Response, next: NextFu
     }
 
     if (getAccount) {
-        response.locals.userAccount = getAccount.accountId;
+        response.locals.userAccount = getAccount;
         next();
     } else {
         return false;

@@ -10,39 +10,18 @@ interface IAccountData {
 }
 
 async function verifyBalanceAccount(request: Request, response: Response, next: NextFunction) {
-    const { user } = response.locals;
-    const { amount }: IAccountData = request.body;
+    const { userAccount } = response.locals;
+    const { amount } = request.body;
 
-    const getAccount = await prisma.account.findUnique({
-        where: {
-            userId: user,
-        },
-        select: {
-            accountId: true,
-        },
-    });
-
-    if (!getAccount) {
-        return response.status(404).json({ message: "Account not found." });
+    if (userAccount) {
+        if (userAccount.balance < amount) {
+            return response.status(406).json({ transaction: false, message: "Balance is not enough" });
+        } else {
+            next();
+        }
+    } else {
+        return response.status(500).json({ message: "User account not found" });
     }
-
-    const account = await prisma.account.findUnique({
-        where: {
-            accountId: getAccount.accountId,
-        },
-    });
-
-    if (!account) {
-        return response.status(404).json({ transaction: false, message: "Account not found." });
-    }
-
-    if (account.balance < amount) {
-        return response
-            .status(406)
-            .json({ transaction: false, message: "U don't have balance to make this transaction." });
-    }
-
-    next();
 }
 
 export { verifyBalanceAccount };
