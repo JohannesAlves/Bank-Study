@@ -1,11 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 type TButtonNavProps = {
     btnText: string;
-    handleOnClick?: (...props: any) => void;
+    page: string;
 };
 
-function ButtonNav({ btnText, handleOnClick }: TButtonNavProps) {
+function ButtonNav({ btnText, page }: TButtonNavProps) {
+    const navigate = useNavigate();
+
     return (
-        <button className="hover:bg-orange-500 rounded" onClick={handleOnClick}>
+        <button className="hover:bg-orange-500 rounded" onClick={() => navigate(`/${page}`)}>
             {btnText}
         </button>
     );
