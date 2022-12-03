@@ -1,19 +1,16 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ButtonNav from "../../atoms/ButtonNav";
+import { ProfileDeposit } from "../../organisms/ProfileDeposit";
+import { useNavigate } from "react-router-dom";
 
 export function ButtonsNav() {
-    const [activeTab, setActiveTab] = useState("index");
-
-    const handleActiveTab = (type: string) => {
-        setActiveTab(type);
-    };
-
     return (
         <div className="flex flex-col space-y-4 mt-10 text-lg font-light">
-            <ButtonNav btnText="Início" handleOnClick={handleActiveTab} />
-            <ButtonNav btnText="Histórico" />
-            <ButtonNav btnText="Depositar" />
-            <ButtonNav btnText="Transferir" />
+            <ButtonNav btnText="Início" page="profile/index" />
+            <ButtonNav btnText="Histórico" page="profile/historic" />
+            <ButtonNav btnText="Depositar" page="profile/deposit" />
+            <ButtonNav btnText="Transferir" page="profile/transfer" />
         </div>
     );
 }
