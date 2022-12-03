@@ -45,6 +45,7 @@ function Main() {
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
                         <div>
                             <input
+                                autoComplete="off"
                                 {...register("cpf")}
                                 onChange={handleChangeMask}
                                 value={value}
