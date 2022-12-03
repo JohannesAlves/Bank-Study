@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export function ButtonsNav() {
     return (
         <div className="flex flex-col space-y-4 mt-10 text-lg font-light">
-            <ButtonNav btnText="Início" page="profile/index" />
+            <ButtonNav btnText="Início" page="profile" />
             <ButtonNav btnText="Histórico" page="profile/historic" />
             <ButtonNav btnText="Depositar" page="profile/deposit" />
             <ButtonNav btnText="Transferir" page="profile/transfer" />

@@ -12,7 +12,7 @@ function Profile() {
             <div className="flex flex-col lg:flex-row h-full font-sans">
                 <Nav />
                 <Routes>
-                    <Route path="index" element={<ProfileIndex />} />
+                    <Route path="" element={<ProfileIndex />} />
                     <Route path="historic" element={<ProfileHistoric />} />
                     <Route path="deposit" element={<ProfileDeposit />} />
                     <Route path="transfer" element={<ProfileTransfer />} />
