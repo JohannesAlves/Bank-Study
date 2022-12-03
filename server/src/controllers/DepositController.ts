@@ -9,9 +9,10 @@ interface IDepositData {
 }
 
 const DepositController = async (request: Request, response: Response) => {
-    const { amount, toAccountId }: IDepositData = request.body;
+    const { userAccount } = response.locals;
+    const { amount }: IDepositData = request.body;
 
-    if (!amount || !toAccountId) {
+    if (!amount) {
         return response.status(400).json({ deposit: false, message: "U can't send data empty" });
     }
 
@@ -26,13 +27,13 @@ const DepositController = async (request: Request, response: Response) => {
     const deposit = await prisma.depositHistory.create({
         data: {
             amount,
-            toAccountId,
+            toAccountId: userAccount.accountId,
         },
     });
 
     const depositInAccount = await prisma.account.update({
         where: {
-            accountId: toAccountId,
+            accountId: userAccount.accountId,
         },
         data: {
             balance: {
