@@ -23,8 +23,7 @@ export function auth(request: Request, response: Response, next: NextFunction): 
 
         try {
             const decoded = <IDecodedJWT>jwt.verify(token, `SECRET_KEY`);
-            response.locals.id = decoded.id;
-            response.locals.fullname = decoded.fullname;
+            response.locals.user = decoded.user;
             next();
         } catch {
             throw new Error("Token inválido.");
