@@ -32,7 +32,7 @@ const LoginController = async (request: Request, response: Response) => {
             expiresIn: "2 days",
         });
 
-        return response.status(200).json({ userId: user.id, token });
+        return response.status(200).json({ userId: user.id, token, fullname: user.fullname });
     }
 };
 
