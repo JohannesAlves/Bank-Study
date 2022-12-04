@@ -1,4 +1,4 @@
-import { Subtitle } from "../../atoms/Subtitle";
+import { Transfers } from "./Transfers";
 
 export function ProfileHistoric() {
     return (
@@ -13,11 +13,7 @@ export function ProfileHistoric() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-gray-600 text-slate-200">
-                            <td>Transferência</td>
-                            <td>11/02/2001</td>
-                            <td>R$112,00</td>
-                        </tr>
+                        <Transfers />
                     </tbody>
                 </table>
             </div>

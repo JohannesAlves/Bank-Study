@@ -2,8 +2,16 @@ import { AuthContext } from "../../../context/AuthContext";
 import { useState, useEffect, useContext } from "react";
 import { api } from "../../../api/api";
 
-export function useData() {
-    const [data, setData] = useState({});
+interface IData {
+    transfersUser: {
+        amount: string;
+        idTransfer: string;
+        createdAt: string;
+    }[];
+}
+
+export function useTransfers() {
+    const [data, setData] = useState({} as IData);
     const { user } = useContext(AuthContext);
 
     if (user.fullname) {
@@ -15,5 +23,9 @@ export function useData() {
         useEffect(() => {
             getData();
         }, []);
+    } else {
+        return {} as IData;
     }
+
+    return data;
 }
