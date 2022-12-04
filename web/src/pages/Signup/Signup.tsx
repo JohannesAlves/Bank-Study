@@ -57,7 +57,7 @@ export function Signup() {
                     </div>
 
                     <div className="mt-20">
-                        <Button btnText="Cadastrar" />
+                        <Button btnText="CADASTRAR" />
                     </div>
                 </form>
             </div>
