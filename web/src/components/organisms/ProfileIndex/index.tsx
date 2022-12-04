@@ -1,7 +1,7 @@
-import { useData } from "./useIndex";
+import { useBalance } from "./useBalance";
 
 export function ProfileIndex() {
-    const data = useData();
+    const data = useBalance();
 
     return (
         <div className="mx-auto mt-20 text-4xl text-center">

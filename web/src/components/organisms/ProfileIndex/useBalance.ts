@@ -6,7 +6,7 @@ interface IData {
     balance: string;
 }
 
-export function useData() {
+export function useBalance() {
     const [data, setData] = useState({} as IData);
     const { user } = useContext(AuthContext);
 
@@ -20,7 +20,7 @@ export function useData() {
             getData();
         }, []);
     } else {
-        return false;
+        return {} as IData;
     }
 
     return data;
