@@ -5,6 +5,8 @@ import { Nav } from "../../components/organisms/Nav";
 import { ProfileHistoric } from "../../components/organisms/ProfileHistoric";
 import { ProfileDeposit } from "../../components/organisms/ProfileDeposit";
 import { ProfileTransfer } from "../../components/organisms/ProfileTransfer";
+import { Deposits } from "../../components/organisms/ProfileHistoric/Deposits";
+import { Transfers } from "../../components/organisms/ProfileHistoric/Transfers";
 
 function Profile() {
     return (
@@ -14,6 +16,8 @@ function Profile() {
                 <Routes>
                     <Route path="" element={<ProfileIndex />} />
                     <Route path="historic" element={<ProfileHistoric />} />
+                    <Route path="historic/deposits" element={<Deposits />} />
+                    <Route path="historic/transfers" element={<Transfers />} />
                     <Route path="deposit" element={<ProfileDeposit />} />
                     <Route path="transfer" element={<ProfileTransfer />} />
                 </Routes>
