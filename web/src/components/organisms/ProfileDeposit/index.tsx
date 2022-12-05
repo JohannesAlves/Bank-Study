@@ -23,8 +23,16 @@ export function ProfileDeposit() {
         const amountToDecimal = Number(TwoDecimalsNumber(amountToNumber));
 
         if (amountToDecimal > 2000) {
-            alert("Ei, esqueceu do combinado? No máximo R$2000,00");
-            return;
+            return toast.error("O valor não pode ser maior do que R$2000.00", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
 
         console.log(amountToDecimal);
