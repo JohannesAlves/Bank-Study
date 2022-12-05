@@ -3,6 +3,7 @@ import { Button } from "../../components/atoms/Button";
 import { maskCPF } from "../../utils/maskCPF";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { api } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 interface FormValues {
     cpf: string;
@@ -12,10 +13,15 @@ interface FormValues {
 export function Signup() {
     const [value, setValue] = useState("");
     const { register, handleSubmit } = useForm<FormValues>();
+    const navigate = useNavigate();
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         try {
             const response = await api.post("/signup", data);
+            if (response) {
+                alert("Registrado com sucesso");
+                navigate("/");
+            }
         } catch (error) {
             alert("Algo de errado aconteceu!");
         }
