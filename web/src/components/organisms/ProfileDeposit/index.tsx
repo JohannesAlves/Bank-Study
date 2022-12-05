@@ -69,7 +69,7 @@ export function ProfileDeposit() {
                         </div>
                         <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
                             <button
-                                onClick={(event) => {
+                                onClick={() => {
                                     const value = 100;
                                     setValue("amount", `${value}`);
                                     setAmount(`R$100.00`);
