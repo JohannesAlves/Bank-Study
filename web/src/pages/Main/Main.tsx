@@ -42,6 +42,9 @@ function Main() {
                                 autoComplete="off"
                                 {...(register("cpf"),
                                 {
+                                    maxLength: 14,
+                                    minLength: 14,
+                                    required: true,
                                     onChange: (event) => {
                                         const { value } = event.currentTarget;
                                         setValue("cpf", maskCPF(value));
