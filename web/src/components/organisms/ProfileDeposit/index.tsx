@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { api } from "../../../api/api";
+import { TwoDecimalsNumber } from "../../../utils/2DecimalsNumber";
 
 interface FormValues {
     amount: string;
@@ -13,6 +14,7 @@ interface FormValues {
 export function ProfileDeposit() {
     const { register, handleSubmit } = useForm<FormValues>();
     const { user } = useContext(AuthContext);
+    const [value, setValue] = useState("0");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         const amountToNumber = Number(data.amount);
@@ -31,6 +33,9 @@ export function ProfileDeposit() {
         }
     };
 
+    const valueToNumber = Number(value);
+    const toDecimal = TwoDecimalsNumber(valueToNumber);
+
     return (
         <>
             <div className=" w-9/12 h-4/3 mx-auto mt-10 rounded-md overflow-auto">
@@ -44,6 +49,9 @@ export function ProfileDeposit() {
                         <div className="flex flex-col items-center">
                             <input
                                 {...register("amount")}
+                                type="number"
+                                onChange={(event) => setValue(event.target.value)}
+                                value={toDecimal}
                                 placeholder="R$100,00"
                                 className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
                             />
