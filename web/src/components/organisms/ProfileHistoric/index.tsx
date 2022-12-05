@@ -1,3 +1,4 @@
+import { Deposits } from "./Deposits";
 import { Transfers } from "./Transfers";
 
 export function ProfileHistoric() {
@@ -13,7 +14,7 @@ export function ProfileHistoric() {
                         </tr>
                     </thead>
                     <tbody>
-                        <Transfers />
+                        <Deposits />
                     </tbody>
                 </table>
             </div>
