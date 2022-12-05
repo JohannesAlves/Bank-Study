@@ -18,7 +18,6 @@ export function ProfileDeposit() {
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         const amountToNumber = Number(data.amount);
         const amountToDecimal = Number(TwoDecimalsNumber(amountToNumber));
-        console.log(data);
 
         try {
             if (user.fullname) {
