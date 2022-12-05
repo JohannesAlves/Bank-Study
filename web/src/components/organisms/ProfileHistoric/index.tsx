@@ -2,6 +2,8 @@ import { Deposits } from "./Deposits";
 import { Transfers } from "./Transfers";
 
 export function ProfileHistoric() {
+    function handleOnClick() {}
+
     return (
         <>
             <div className="flex flex-col text-center mx-auto w-full lg:w-10/12 h-full overflow-auto lg:rounded-r-lg ">
@@ -15,6 +17,7 @@ export function ProfileHistoric() {
                     </thead>
                     <tbody>
                         <Deposits />
+                        <Transfers />
                     </tbody>
                 </table>
             </div>
