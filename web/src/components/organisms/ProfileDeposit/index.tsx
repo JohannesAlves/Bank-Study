@@ -1,6 +1,7 @@
 import { Button } from "../../atoms/Button";
 import Input from "../../atoms/Input";
 import requestMoney from "../../../assets/requestMoney.png";
+import { useDeposit } from "./useDeposit";
 
 export function ProfileDeposit() {
     return (
@@ -13,7 +14,10 @@ export function ProfileDeposit() {
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <Input placeholder="R$100,00" />
+                        <input
+                            placeholder="R$100,00"
+                            className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
+                        />
                         <p className="text-slate-600 mt-1">O depósito máximo é de R$2000,00 ;)</p>
                     </div>
                     <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
