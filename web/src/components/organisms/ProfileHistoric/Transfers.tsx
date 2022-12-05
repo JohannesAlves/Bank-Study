@@ -19,7 +19,7 @@ export function Transfers() {
                     return (
                         <>
                             <tr className="bg-gray-600 text-slate-200" key={transferUser.idTransfer}>
-                                <td>Depósitos</td>
+                                <td>Transferência</td>
                                 <td>{depositDate}</td>
                                 <td>R${TwoDecimalsNumber(amountToNumber)}</td>
                             </tr>
