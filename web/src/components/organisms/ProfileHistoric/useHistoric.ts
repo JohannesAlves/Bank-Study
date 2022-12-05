@@ -12,7 +12,7 @@ interface IData {
         amount: string;
         idDeposit: string;
         createdAt: string;
-    };
+    }[];
 }
 
 export function useHistoric() {
