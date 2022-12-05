@@ -34,3 +34,5 @@ const HistoricController = async (request: Request, response: Response) => {
         return response.status(500).json({ message: "Internal server error to get transfers" });
     }
 };
+
+export { HistoricController };
