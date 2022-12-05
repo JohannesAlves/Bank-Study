@@ -13,13 +13,11 @@ export function Deposits() {
                     const transferDate = new Intl.DateTimeFormat("pt-BR").format(date);
                     const amountToNumber = Number(depositUser.amount);
                     return (
-                        <>
-                            <tr className="bg-gray-600 text-slate-200" key={depositUser.idDeposit}>
-                                <td>Depósito</td>
-                                <td>{transferDate}</td>
-                                <td>R${TwoDecimalsNumber(amountToNumber)}</td>
-                            </tr>
-                        </>
+                        <tr className="bg-gray-600 text-slate-200" key={depositUser.idDeposit}>
+                            <td>Depósito</td>
+                            <td>{transferDate}</td>
+                            <td>R${TwoDecimalsNumber(amountToNumber)}</td>
+                        </tr>
                     );
                 })}
             </>
