@@ -13,7 +13,7 @@ interface FormValues {
 export function ProfileDeposit() {
     const { register, handleSubmit, setValue } = useForm<FormValues>();
     const { user } = useContext(AuthContext);
-    const [amount, setAmount] = useState("");
+    const [amount, setAmount] = useState("R$0.0");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         const amountToNumber = Number(data.amount);
