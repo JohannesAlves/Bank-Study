@@ -12,6 +12,10 @@ const DepositController = async (request: Request, response: Response) => {
     const { userAccount } = response.locals;
     const { amount }: IDepositData = request.body;
 
+    if (typeof amount === "string") {
+        return response.status(400).json({ message: "u can't send string." });
+    }
+
     if (!amount) {
         return response.status(400).json({ deposit: false, message: "U can't send data empty" });
     }

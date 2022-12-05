@@ -13,13 +13,16 @@ interface FormValues {
 export function ProfileDeposit() {
     const { register, handleSubmit, setValue } = useForm<FormValues>();
     const { user } = useContext(AuthContext);
+    const [amount, setAmount] = useState("0.0");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
-        const amountToNumberDecimal = TwoDecimalsNumber(Number(data.amount));
+        const amountToNumber = Number(data.amount);
+        const amountToDecimal = Number(TwoDecimalsNumber(amountToNumber));
+        console.log(data);
 
         try {
             if (user.fullname) {
-                const response = await api.post("/deposit", { amount: amountToNumberDecimal });
+                const response = await api.post("/deposit", { amount: amountToDecimal });
                 if (response) {
                     alert("Depósito realizado com sucesso!");
                 }
@@ -43,7 +46,16 @@ export function ProfileDeposit() {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col items-center">
                             <input
-                                {...register("amount")}
+                                {...(register("amount"),
+                                {
+                                    onChange: (event) => {
+                                        const { value } = event.currentTarget;
+                                        const valueToDecimal = Number(value).toFixed(2);
+                                        setValue("amount", `${valueToDecimal}`);
+                                        setAmount(valueToDecimal);
+                                    },
+                                    value: amount,
+                                })}
                                 type="number"
                                 placeholder="R$100,00"
                                 className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
