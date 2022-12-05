@@ -71,8 +71,7 @@ export function ProfileDeposit() {
                             <button
                                 onClick={(event) => {
                                     const value = 100;
-                                    const valueToDecimal = value.toFixed(2);
-                                    setValue("amount", `${valueToDecimal}`);
+                                    setValue("amount", `${value}`);
                                     setAmount(`R$100.00`);
                                 }}
                                 type="button"
@@ -82,7 +81,11 @@ export function ProfileDeposit() {
                             </button>
 
                             <button
-                                onClick={() => setAmount("R$200.00")}
+                                onClick={(event) => {
+                                    const value = 200;
+                                    setValue("amount", `${value}`);
+                                    setAmount(`R$200.00`);
+                                }}
                                 type="button"
                                 className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
                             >
@@ -90,7 +93,11 @@ export function ProfileDeposit() {
                             </button>
 
                             <button
-                                onClick={() => setAmount("R$300.00")}
+                                onClick={(event) => {
+                                    const value = 300;
+                                    setValue("amount", `${value}`);
+                                    setAmount(`R$300.00`);
+                                }}
                                 type="button"
                                 className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
                             >
