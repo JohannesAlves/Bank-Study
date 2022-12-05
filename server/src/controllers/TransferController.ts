@@ -81,25 +81,4 @@ const TransferController = async (request: Request, response: Response) => {
     }
 };
 
-const GetTransfersController = async (request: Request, response: Response) => {
-    const { userAccount } = response.locals;
-
-    try {
-        const transfersUser = await prisma.transfer.findMany({
-            where: {
-                fromAccountId: userAccount.accountId,
-            },
-            select: {
-                amount: true,
-                idTransfer: true,
-                createdAt: true,
-            },
-        });
-
-        return response.status(200).json({ transfersUser });
-    } catch {
-        return response.status(500).json({ message: "Internal server error to get transfers" });
-    }
-};
-
-export { TransferController, GetTransfersController };
+export { TransferController };
