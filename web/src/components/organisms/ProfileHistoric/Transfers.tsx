@@ -10,10 +10,7 @@ export function Transfers() {
 
     return data?.transfersUser?.map((transferUser, index) => {
         const date = new Date(transferUser.createdAt);
-        const dateYear = date.getFullYear();
-        const dateMonth = date.getMonth();
-        const dateDay = date.getDate();
-        const transferDate = `${dateDay}/${dateMonth}/${dateYear}`;
+        const transferDate = new Intl.DateTimeFormat("pt-BR").format(date);
 
         const amountToNumber = Number(transferUser.amount);
 
