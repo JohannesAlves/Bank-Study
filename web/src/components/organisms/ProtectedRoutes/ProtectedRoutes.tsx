@@ -2,7 +2,11 @@ import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 
-export const ProtectedRoute = ({ children }: any) => {
+type Props = {
+    children: JSX.Element | JSX.Element[] | string | string[];
+};
+
+export const ProtectedRoute = ({ children }: Props) => {
     const { user } = useContext(AuthContext);
 
     if (!user.fullname) {
