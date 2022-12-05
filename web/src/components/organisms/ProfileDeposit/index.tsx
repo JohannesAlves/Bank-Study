@@ -27,11 +27,24 @@ export function ProfileDeposit() {
             return;
         }
 
+        if (amountToDecimal <= 0) {
+            return toast.error("O valor não pode ser 0", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+
         try {
             if (user.fullname) {
                 const response = await api.post("/deposit", { amount: amountToDecimal });
                 if (response) {
-                    toast.success("Transferência realizada com sucesso.", {
+                    toast.success("Depósito realizada com sucesso.", {
                         position: "top-right",
                         autoClose: 3000,
                         hideProgressBar: false,
