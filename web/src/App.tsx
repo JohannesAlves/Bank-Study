@@ -4,6 +4,7 @@ import Profile from "./pages/Profile/Profile";
 import { Signup } from "./pages/Signup/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { ProtectedRoute } from "./components/organisms/ProtectedRoutes/ProtectedRoutes";
 
 function App() {
     return (
@@ -13,7 +14,8 @@ function App() {
                     <AuthProvider>
                         <Routes>
                             <Route path="/" element={<Main />} />
-                            <Route path="/profile/*" element={<Profile />} />
+
+                            <Route path="/profile/*" element={<ProtectedRoute children={<Profile />} />} />
                             <Route path="/signup" element={<Signup />} />
                         </Routes>
                     </AuthProvider>
