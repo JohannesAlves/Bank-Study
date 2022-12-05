@@ -27,6 +27,7 @@ export function ProfileDeposit() {
             return;
         }
 
+        console.log(amountToDecimal);
         if (amountToDecimal <= 0) {
             return toast.error("O valor não pode ser 0", {
                 position: "top-right",
@@ -44,7 +45,7 @@ export function ProfileDeposit() {
             if (user.fullname) {
                 const response = await api.post("/deposit", { amount: amountToDecimal });
                 if (response) {
-                    toast.success("Depósito realizada com sucesso.", {
+                    toast.success("Depósito realizado com sucesso.", {
                         position: "top-right",
                         autoClose: 3000,
                         hideProgressBar: false,
