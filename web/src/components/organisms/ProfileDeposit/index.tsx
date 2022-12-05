@@ -11,16 +11,15 @@ interface FormValues {
 }
 
 export function ProfileDeposit() {
-    const { register, handleSubmit } = useForm<FormValues>();
+    const { register, handleSubmit, setValue } = useForm<FormValues>();
     const { user } = useContext(AuthContext);
-    const [value, setValue] = useState("0");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
-        const amountToNumber = Number(data.amount);
+        const amountToNumberDecimal = TwoDecimalsNumber(Number(data.amount));
 
         try {
             if (user.fullname) {
-                const response = await api.post("/deposit", { amount: amountToNumber });
+                const response = await api.post("/deposit", { amount: amountToNumberDecimal });
                 if (response) {
                     alert("Depósito realizado com sucesso!");
                 }
@@ -31,14 +30,6 @@ export function ProfileDeposit() {
             return alert("Error in deposit.");
         }
     };
-
-    const handleClick = (event: any) => {
-        event.preventDefault();
-        setValue(event.target.value);
-    };
-
-    const valueToNumber = Number(value);
-    const toDecimal = TwoDecimalsNumber(valueToNumber);
 
     return (
         <>
@@ -54,8 +45,6 @@ export function ProfileDeposit() {
                             <input
                                 {...register("amount")}
                                 type="number"
-                                onChange={(event) => setValue(event.target.value)}
-                                value={toDecimal}
                                 placeholder="R$100,00"
                                 className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
                             />
@@ -63,25 +52,24 @@ export function ProfileDeposit() {
                         </div>
                         <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
                             <button
-                                value="100"
-                                onClick={handleClick}
+                                onClick={() => setValue("amount", "100.00")}
                                 className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
                             >
                                 R$100,00
                             </button>
+
                             <button
-                                value="200"
-                                onClick={handleClick}
+                                onClick={() => setValue("amount", "200.00")}
                                 className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
                             >
                                 R$200,00
                             </button>
+
                             <button
-                                value="300"
-                                onClick={handleClick}
+                                onClick={() => setValue("amount", "300.00")}
                                 className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
                             >
-                                R$100,00
+                                R$300,00
                             </button>
                         </div>
 
