@@ -18,7 +18,11 @@ export function ProfileDeposit() {
         const amountToNumber = Number(data.amount);
 
         try {
-            const response = await api.post("/deposit", { amount: amountToNumber });
+            if (user.fullname) {
+                const response = await api.post("/deposit", { amount: amountToNumber });
+            } else {
+                return;
+            }
         } catch {
             return alert("Error in deposit.");
         }
