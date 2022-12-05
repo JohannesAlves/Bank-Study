@@ -8,15 +8,20 @@ interface IData {
         idTransfer: string;
         createdAt: string;
     }[];
+    depositsUser: {
+        amount: string;
+        idDeposit: string;
+        createdAt: string;
+    };
 }
 
-export function useTransfers() {
+export function useHistoric() {
     const [data, setData] = useState({} as IData);
     const { user } = useContext(AuthContext);
 
     if (user.fullname) {
         const getData = async () => {
-            const response = await api.get("/transfer");
+            const response = await api.get("/historic");
             setData(response.data);
         };
 

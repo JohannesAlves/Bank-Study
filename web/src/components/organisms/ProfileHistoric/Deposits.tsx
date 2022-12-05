@@ -1,8 +1,8 @@
 import { TwoDecimalsNumber } from "../../../utils/2DecimalsNumber";
-import { useTransfers } from "./useHistoric";
+import { useHistoric } from "./useHistoric";
 
-export function Transfers() {
-    const data = useTransfers();
+export function Deposits() {
+    const data = useHistoric();
 
     if (!data) {
         return <h1>Sem dados</h1>;
