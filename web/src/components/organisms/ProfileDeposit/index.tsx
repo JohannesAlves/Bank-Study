@@ -5,6 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { api } from "../../../api/api";
 import { TwoDecimalsNumber } from "../../../utils/2DecimalsNumber";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface FormValues {
     amount: string;
@@ -29,13 +31,31 @@ export function ProfileDeposit() {
             if (user.fullname) {
                 const response = await api.post("/deposit", { amount: amountToDecimal });
                 if (response) {
-                    alert("Depósito realizado com sucesso!");
+                    toast.success("Transferência realizada com sucesso.", {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
                 }
             } else {
                 return;
             }
         } catch {
-            return alert("Error in deposit.");
+            return toast.error("Algo de errado na transferência!", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     };
 
@@ -111,6 +131,7 @@ export function ProfileDeposit() {
                     </form>
                 </div>
             </div>
+            <ToastContainer />;
         </>
     );
 }
