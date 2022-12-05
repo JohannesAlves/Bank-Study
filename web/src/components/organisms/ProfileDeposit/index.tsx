@@ -33,6 +33,11 @@ export function ProfileDeposit() {
         }
     };
 
+    const handleClick = (event: any) => {
+        event.preventDefault();
+        setValue(event.target.value);
+    };
+
     const valueToNumber = Number(value);
     const toDecimal = TwoDecimalsNumber(valueToNumber);
 
@@ -58,9 +63,27 @@ export function ProfileDeposit() {
                             <p className="text-slate-600 mt-1">O depósito máximo é de R$2000,00 ;)</p>
                         </div>
                         <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
-                            <Button btnText="R$100,00" />
-                            <Button btnText="R$200,00" />
-                            <Button btnText="R$300,00" />
+                            <button
+                                value="100"
+                                onClick={handleClick}
+                                className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
+                            >
+                                R$100,00
+                            </button>
+                            <button
+                                value="200"
+                                onClick={handleClick}
+                                className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
+                            >
+                                R$200,00
+                            </button>
+                            <button
+                                value="300"
+                                onClick={handleClick}
+                                className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
+                            >
+                                R$100,00
+                            </button>
                         </div>
 
                         <div className="flex justify-center">
