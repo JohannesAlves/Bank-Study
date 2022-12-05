@@ -14,9 +14,11 @@ function App() {
                     <AuthProvider>
                         <Routes>
                             <Route path="/" element={<Main />} />
-
                             <Route path="/profile/*" element={<ProtectedRoute children={<Profile />} />} />
                             <Route path="/signup" element={<Signup />} />
+
+                            <Route path="error404" element={<Error404 />} />
+                            <Route path="*" element={<Error404 />} />
                         </Routes>
                     </AuthProvider>
                 </BrowserRouter>

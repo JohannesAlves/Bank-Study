@@ -10,7 +10,7 @@ export const ProtectedRoute = ({ children }: Props) => {
     const { user } = useContext(AuthContext);
 
     if (!user.fullname) {
-        return <Navigate to="/" replace />;
+        return <Navigate to="/error404" replace />;
     }
 
     return children;
