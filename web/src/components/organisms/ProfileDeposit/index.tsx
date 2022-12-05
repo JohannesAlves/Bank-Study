@@ -20,6 +20,9 @@ export function ProfileDeposit() {
         try {
             if (user.fullname) {
                 const response = await api.post("/deposit", { amount: amountToNumber });
+                if (response) {
+                    alert("Depósito realizado com sucesso!");
+                }
             } else {
                 return;
             }
