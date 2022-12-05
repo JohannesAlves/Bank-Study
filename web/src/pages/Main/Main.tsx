@@ -19,8 +19,8 @@ interface ConfigProps {
 
 function Main() {
     const { handleLogin } = useContext(AuthContext);
-    const { register, handleSubmit } = useForm<FormValues>();
-    const [value, setValue] = useState("");
+    const { register, handleSubmit, setValue } = useForm<FormValues>();
+    const [cpf, setCPF] = useState("");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         try {
@@ -29,12 +29,6 @@ function Main() {
             alert("Algo de errado aconteceu!");
         }
     };
-
-    function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
-        const { value } = event.currentTarget;
-
-        setValue(maskCPF(value));
-    }
 
     return (
         <>
@@ -46,9 +40,15 @@ function Main() {
                         <div>
                             <input
                                 autoComplete="off"
-                                {...register("cpf")}
-                                onChange={handleChangeMask}
-                                value={value}
+                                {...(register("cpf"),
+                                {
+                                    onChange: (event) => {
+                                        const { value } = event.currentTarget;
+                                        setValue("cpf", maskCPF(value));
+                                        setCPF(maskCPF(value));
+                                    },
+                                    value: cpf,
+                                })}
                                 className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
                             />
                         </div>
