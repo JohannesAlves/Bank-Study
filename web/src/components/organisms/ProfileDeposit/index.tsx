@@ -13,7 +13,7 @@ interface FormValues {
 export function ProfileDeposit() {
     const { register, handleSubmit, setValue } = useForm<FormValues>();
     const { user } = useContext(AuthContext);
-    const [amount, setAmount] = useState("0.0");
+    const [amount, setAmount] = useState("R$0.0");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         const amountToNumber = Number(data.amount);
@@ -50,13 +50,13 @@ export function ProfileDeposit() {
                                 {
                                     onChange: (event) => {
                                         const { value } = event.currentTarget;
-                                        const valueToDecimal = Number(value).toFixed(2);
+                                        const removedCurrencyMask = value.slice(2);
+                                        const valueToDecimal = Number(removedCurrencyMask).toFixed(2);
                                         setValue("amount", `${valueToDecimal}`);
-                                        setAmount(valueToDecimal);
+                                        setAmount(`R$${valueToDecimal}`);
                                     },
                                     value: amount,
                                 })}
-                                type="number"
                                 placeholder="R$100,00"
                                 className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
                             />
