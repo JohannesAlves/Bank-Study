@@ -1,3 +1,4 @@
+import { TwoDecimalsNumber } from "../../../utils/2DecimalsNumber";
 import { useTransfers } from "./useTransfers";
 
 export function Transfers() {
@@ -14,12 +15,14 @@ export function Transfers() {
         const dateDay = date.getDate();
         const transferDate = `${dateDay}/${dateMonth}/${dateYear}`;
 
+        const amountToNumber = Number(transferUser.amount);
+
         return (
             <>
                 <tr className="bg-gray-600 text-slate-200" key={transferUser.idTransfer}>
                     <td>Transferência</td>
                     <td>{transferDate}</td>
-                    <td>R${transferUser.amount}</td>
+                    <td>R${TwoDecimalsNumber(amountToNumber)}</td>
                 </tr>
             </>
         );
