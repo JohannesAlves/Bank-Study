@@ -16,8 +16,14 @@ export function ProfileDeposit() {
     const [amount, setAmount] = useState("R$0.00");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
+        console.log(data);
         const amountToNumber = Number(data.amount);
         const amountToDecimal = Number(TwoDecimalsNumber(amountToNumber));
+
+        if (amountToDecimal > 2000) {
+            alert("Ei, esqueceu do combinado? No máximo R$2000,00");
+            return;
+        }
 
         try {
             if (user.fullname) {
@@ -63,7 +69,12 @@ export function ProfileDeposit() {
                         </div>
                         <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
                             <button
-                                onClick={() => setAmount("R$100.00")}
+                                onClick={(event) => {
+                                    const value = 100;
+                                    const valueToDecimal = value.toFixed(2);
+                                    setValue("amount", `${valueToDecimal}`);
+                                    setAmount(`R$100.00`);
+                                }}
                                 type="button"
                                 className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
                             >
