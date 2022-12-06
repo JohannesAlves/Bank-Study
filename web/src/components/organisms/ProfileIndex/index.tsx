@@ -14,6 +14,12 @@ export function ProfileIndex() {
                 Saldo disponível: <br />
                 {decimalToCurrencyMoney}
             </h3>
+
+            <div className="mt-10">
+                <h3 className="text-slate-200">
+                    Sua conta: <br /> {data.accountId}
+                </h3>
+            </div>
         </div>
     );
 }

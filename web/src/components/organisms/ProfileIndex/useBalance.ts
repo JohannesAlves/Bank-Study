@@ -4,6 +4,7 @@ import { AuthContext } from "../../../context/AuthContext";
 
 interface IData {
     balance: string;
+    accountId: string;
 }
 
 export function useBalance() {
