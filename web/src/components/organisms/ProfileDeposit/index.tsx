@@ -83,7 +83,7 @@ export function ProfileDeposit() {
 
     return (
         <>
-            <div className=" w-9/12 h-4/3 mx-auto mt-10 rounded-md overflow-auto">
+            <div className=" w-9/12 h-4/3 mx-auto sm:mt-10 rounded-md">
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex flex-col items-center">
                         <h2 className="text-3xl text-orange-500 font-bold">Depósito</h2>
@@ -105,11 +105,11 @@ export function ProfileDeposit() {
                                     value: amount,
                                 })}
                                 placeholder="R$100,00"
-                                className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
+                                className="w-full sm:w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 sm:text-3xl text-lg text-center"
                             />
                             <p className="text-slate-600 mt-1">O depósito máximo é de R$2000,00 ;)</p>
                         </div>
-                        <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
+                        <div className="sm:mt-1 flex justify-center flex-wrap  sm:space-x-6">
                             <button
                                 onClick={() => {
                                     const value = 100;
@@ -145,10 +145,10 @@ export function ProfileDeposit() {
                             >
                                 R$300,00
                             </button>
-                        </div>
 
-                        <div className="flex justify-center">
-                            <Button btnText="DEPOSITAR" />
+                            <button className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-green-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold">
+                                DEPOSITAR
+                            </button>
                         </div>
                     </form>
                 </div>
