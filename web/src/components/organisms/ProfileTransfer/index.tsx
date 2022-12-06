@@ -55,7 +55,7 @@ export function ProfileTransfer() {
                 return;
             }
         } catch {
-            return toast.error("Algo de errado aconteceu, na transferência me perdoe! 😢 ", {
+            return toast.error("Algo de errado aconteceu na transferência me perdoe! 😢 ", {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
