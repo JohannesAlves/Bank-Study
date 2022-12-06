@@ -9,7 +9,7 @@ export function ProfileIndex() {
     const decimalToCurrencyMoney = balanceToDecimal.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
 
     return (
-        <div className="mx-auto mt-20 text-base 2xl:text-4xl lg:text-2xl text-center w-full">
+        <div className="mx-auto mt-20 text-base 2xl:text-4xl lg:text-2xl text-center w-9/12">
             <h3 className="text-slate-200">
                 Saldo disponível: <br />
                 {decimalToCurrencyMoney}
