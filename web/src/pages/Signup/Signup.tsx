@@ -49,19 +49,21 @@ export function Signup() {
                             <input
                                 {...register("fullname")}
                                 placeholder="Nome completo..."
-                                className=" h-11  border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
+                                className=" h-7  border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
                             />
                         </div>
 
                         <div className="flex flex-col justify-center">
-                            <h2>Me informa um CPF válido</h2>
+                            <div className="mt-5">
+                                <h2>Me informa um CPF válido</h2>
+                            </div>
                             <input
                                 autoComplete="off"
                                 {...register("cpf")}
                                 onChange={handleChangeMask}
                                 value={value}
                                 placeholder="123.456.178-12"
-                                className="2xl:w-96 h-11  border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
+                                className="2xl:w-96 h-7 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
                             />
                         </div>
 
