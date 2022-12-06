@@ -102,6 +102,10 @@ export function ProfileTransfer() {
                                     className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-2xl text-center"
                                 />
                             </div>
+                            <p className="text-slate-600 mt-1 text-center">
+                                Ei, você pode transferir para você mesmo para testar o app! <br />
+                                Mas lembrando, o máximo é R$2000,00 😉
+                            </p>
                         </div>
                         <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
                             <button
