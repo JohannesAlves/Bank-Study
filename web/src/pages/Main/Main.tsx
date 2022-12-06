@@ -57,9 +57,11 @@ function Main() {
                         </div>
 
                         <div className="space-x-1 sm:space-x-5 flex justify-center flex-wrap">
-                            <Button btnText="VAMOS LÁ!" />
+                            <button type="submit" className="btn-variant-one mt-10">
+                                VAMOS LÁ!
+                            </button>
                             <Link to="/signup">
-                                <Button btnText="REGISTRAR" />
+                                <button className="btn-variant-one mt-10">REGISTRAR</button>
                             </Link>
                         </div>
                     </form>

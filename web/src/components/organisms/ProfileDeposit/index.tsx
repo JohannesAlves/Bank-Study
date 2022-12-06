@@ -117,7 +117,7 @@ export function ProfileDeposit() {
                                     setAmount(`R$100.00`);
                                 }}
                                 type="button"
-                                className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
+                                className="btn-variant-one mt-10"
                             >
                                 R$100,00
                             </button>
@@ -129,7 +129,7 @@ export function ProfileDeposit() {
                                     setAmount(`R$200.00`);
                                 }}
                                 type="button"
-                                className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
+                                className="btn-variant-one mt-10"
                             >
                                 R$200,00
                             </button>
@@ -141,14 +141,12 @@ export function ProfileDeposit() {
                                     setAmount(`R$300.00`);
                                 }}
                                 type="button"
-                                className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold"
+                                className="btn-variant-one mt-10"
                             >
                                 R$300,00
                             </button>
 
-                            <button className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-green-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold">
-                                DEPOSITAR
-                            </button>
+                            <button className="btn-variant-one mt-10">DEPOSITAR</button>
                         </div>
                     </form>
                 </div>

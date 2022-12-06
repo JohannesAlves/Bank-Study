@@ -9,15 +9,11 @@ export function ProfileHistoric() {
         <>
             <div className="flex justify-center mx-auto mt-32 space-x-3 2xl:space-x-6 flex-wrap">
                 <Link to="deposits">
-                    <button className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold">
-                        DEPÓSITOS
-                    </button>
+                    <button className="btn-variant-one mt-10">DEPÓSITOS</button>
                 </Link>
 
                 <Link to="transfers">
-                    <button className="border-2 mt-10 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold">
-                        TRANSFERÊNCIAS
-                    </button>
+                    <button className="btn-variant-one mt-10 w-40">TRANSFERÊNCIAS</button>
                 </Link>
             </div>
         </>
