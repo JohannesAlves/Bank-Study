@@ -32,4 +32,29 @@
 
         --tw-shadow-color: theme("boxShadowColor.orange.500");
     }
+
+    .input-variant-one {
+        width: theme("width.full");
+        height: theme("height.11");
+
+        background-color: theme("backgroundColor.transparent");
+
+        padding-left: theme("padding.4");
+        padding-right: theme("padding.4");
+
+        padding-top: theme("padding.2");
+        padding-bottom: theme("padding.2");
+
+        border-color: theme("borderColor.gray.600");
+        border-bottom-width: theme("borderWidth.2");
+
+        outline: theme("outlineColor.transparent");
+        outline: theme("outlineOffset.2");
+        outline: theme("outlineWidth.2");
+
+        color: theme("textColor.gray.200");
+
+        font-size: theme("fontSize.3xl");
+        text-align: center;
+    }
 }
