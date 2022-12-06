@@ -40,13 +40,31 @@ export function ProfileTransfer() {
             if (user.fullname) {
                 const response = await api.post("/transfer", { amount: amountToDecimal, toAccountId });
                 if (response) {
-                    alert("Transferência realizada com sucesso!");
+                    return toast.success("Transferência realizada com sucesso. 🥳🥳", {
+                        position: "top-center",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
                 }
             } else {
                 return;
             }
         } catch {
-            return alert("Error in transfer.");
+            return toast.error("Algo de errado aconteceu, na transferência me perdoe! 😢 ", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     };
 

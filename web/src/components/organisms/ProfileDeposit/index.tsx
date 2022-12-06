@@ -23,7 +23,7 @@ export function ProfileDeposit() {
         const amountToDecimal = Number(TwoDecimalsNumber(amountToNumber));
 
         if (amountToDecimal > 2000) {
-            return toast.error("O valor não pode ser maior do que R$2000.00", {
+            return toast.error("Tss! Tss! O valor máximo é R$2000.00  🧐", {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -37,7 +37,7 @@ export function ProfileDeposit() {
 
         console.log(amountToDecimal);
         if (amountToDecimal <= 0) {
-            return toast.error("O valor não pode ser 0", {
+            return toast.error("Como você depositar 0,00R$ ? 😳", {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
