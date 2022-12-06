@@ -1,11 +1,12 @@
 import { Button } from "../../atoms/Button";
-import Input from "../../atoms/Input";
 import moneyTransfer from "../../../assets/moneyTransfer.png";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { api } from "../../../api/api";
 import { TwoDecimalsNumber } from "../../../utils/2DecimalsNumber";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 interface FormValues {
     amount: string;
@@ -23,8 +24,16 @@ export function ProfileTransfer() {
         const toAccountId = data.toAccountId;
 
         if (amountToDecimal > 2000) {
-            alert("Ei, esqueceu do combinado? No máximo R$2000,00");
-            return;
+            return toast.error("Ei, esqueceu do nosso combinado? O valor máximo é de R$2000,00 ;)", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
 
         try {
@@ -118,6 +127,8 @@ export function ProfileTransfer() {
                     </form>
                 </div>
             </div>
+
+            <ToastContainer />
         </>
     );
 }
