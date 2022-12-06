@@ -18,7 +18,7 @@ const BalanceController = async (request: Request, response: Response) => {
         });
 
         if (getBalance) {
-            return response.status(200).json({ balance: getBalance.balance, accountId: true });
+            return response.status(200).json({ balance: getBalance.balance, accountId: getBalance.accountId });
         }
     } catch (errro) {
         return response.status(500).json({ message: "Internal server error to get balance." });
