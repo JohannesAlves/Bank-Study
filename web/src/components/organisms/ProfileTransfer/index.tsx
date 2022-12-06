@@ -1,4 +1,3 @@
-import { Button } from "../../atoms/Button";
 import moneyTransfer from "../../../assets/moneyTransfer.png";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useContext, useEffect, useState } from "react";
