@@ -70,7 +70,7 @@ export function ProfileTransfer() {
 
     return (
         <>
-            <div className=" w-9/12 h-4/3 mx-auto mt-10 rounded-md overflow-auto">
+            <div className=" w-9/12 h-96 mx-auto mt-10 rounded-md overflow-auto">
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex flex-col items-center">
                         <h2 className="text-3xl text-orange-500 font-bold">Transferir</h2>
@@ -79,7 +79,7 @@ export function ProfileTransfer() {
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col items-center">
-                            <div className="flex flex-row space-x-10 flex-wrap justify-center">
+                            <div className="flex flex-row md:space-x-10 flex-wrap justify-center">
                                 <input
                                     autoComplete="off"
                                     {...(register("amount"),
@@ -94,14 +94,14 @@ export function ProfileTransfer() {
                                         value: amount,
                                     })}
                                     placeholder="Qual será o valor?"
-                                    className="w-64 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-2xl text-center"
+                                    className="w-full sm:w-64 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-2xl text-center"
                                 />
 
                                 <input
                                     autoComplete="off"
                                     {...register("toAccountId")}
                                     placeholder="Para qual conta?"
-                                    className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-2xl text-center"
+                                    className="w-full sm:w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 sm:text-2xl text-lg text-center"
                                 />
                             </div>
                             <p className="text-slate-600 mt-1 text-center">
@@ -109,7 +109,7 @@ export function ProfileTransfer() {
                                 Mas lembrando, o máximo é R$2000,00 😉
                             </p>
                         </div>
-                        <div className="mt-1 flex justify-center flex-wrap space-x-2 lg:space-x-6">
+                        <div className="mt-1 flex justify-center flex-wrap sm:space-x-2 lg:space-x-6">
                             <button
                                 onClick={() => {
                                     const value = 100;
