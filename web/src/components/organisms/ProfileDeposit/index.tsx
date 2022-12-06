@@ -24,7 +24,7 @@ export function ProfileDeposit() {
 
         if (amountToDecimal > 2000) {
             return toast.error("O valor não pode ser maior do que R$2000.00", {
-                position: "top-right",
+                position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -38,7 +38,7 @@ export function ProfileDeposit() {
         console.log(amountToDecimal);
         if (amountToDecimal <= 0) {
             return toast.error("O valor não pode ser 0", {
-                position: "top-right",
+                position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -54,7 +54,7 @@ export function ProfileDeposit() {
                 const response = await api.post("/deposit", { amount: amountToDecimal });
                 if (response) {
                     toast.success("Depósito realizado com sucesso.", {
-                        position: "top-right",
+                        position: "top-center",
                         autoClose: 3000,
                         hideProgressBar: false,
                         closeOnClick: true,
@@ -69,7 +69,7 @@ export function ProfileDeposit() {
             }
         } catch {
             return toast.error("Algo de errado na transferência!", {
-                position: "top-right",
+                position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
