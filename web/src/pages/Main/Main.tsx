@@ -52,11 +52,11 @@ function Main() {
                                     },
                                     value: cpf,
                                 })}
-                                className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
+                                className="w-full sm:w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 sm:text-3xl text-lg text-center"
                             />
                         </div>
 
-                        <div className="space-x-5">
+                        <div className="space-x-1 sm:space-x-5 flex justify-center flex-wrap">
                             <Button btnText="VAMOS LÁ!" />
                             <Link to="/signup">
                                 <Button btnText="REGISTRAR" />
