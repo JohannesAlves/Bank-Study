@@ -35,21 +35,25 @@ export function Signup() {
 
     return (
         <>
-            <div className="flex flex-col text-center text-slate-300  w-full h-full">
-                <h2 className="text-2xl font-mono mt-10">Hmmm, parece que você ainda não é registrado.</h2>
+            <div className="flex flex-col justify-center text-center text-slate-300  2xl:w-full 2xl:h-full flex-wrap">
+                <div>
+                    <h2 className="text-xl 2xl:text-2xl font-mono mt-10">
+                        Hmmm, parece que você ainda não é registrado.
+                    </h2>
+                </div>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="flex flex-row  justify-center space-x-20 mt-10">
+                    <div className="flex flex-col mt-10 items-center">
                         <div>
                             <h2>Qual é o seu nome completo?</h2>
                             <input
                                 {...register("fullname")}
                                 placeholder="Nome completo..."
-                                className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
+                                className=" h-11  border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
                             />
                         </div>
 
-                        <div>
+                        <div className="flex flex-col justify-center">
                             <h2>Me informa um CPF válido</h2>
                             <input
                                 autoComplete="off"
@@ -57,13 +61,15 @@ export function Signup() {
                                 onChange={handleChangeMask}
                                 value={value}
                                 placeholder="123.456.178-12"
-                                className="w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 text-3xl text-center"
+                                className="2xl:w-96 h-11  border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
                             />
                         </div>
-                    </div>
 
-                    <div className="mt-20">
-                        <Button btnText="CADASTRAR" />
+                        <div className="">
+                            <button className="border-2 mt-2 2xl:mt-5 hover:shadow-lg transition-all duration-300	 hover:shadow-orange-500/50 border-orange-500 rounded-2xl px-3 py-2 text-orange-500 cursor-pointer hover:bg-stone-900 hover:text-gray-200 font-bold">
+                                CADASTRAR
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
