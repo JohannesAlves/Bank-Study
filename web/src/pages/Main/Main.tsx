@@ -32,7 +32,7 @@ function Main() {
     return (
         <>
             <div className="mt-10 text-center text-gray-200 drop-shadow-lg">
-                <div className="flex flex-col w-full h-full	items-center0">
+                <div className="flex flex-col w-full h-full	items-center">
                     <TitlesMain />
 
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
