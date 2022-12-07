@@ -69,7 +69,7 @@ export function ProfileTransfer() {
 
     return (
         <>
-            <div className=" w-9/12 h-96 2xl:h-5/6	mx-auto mt-10 rounded-md overflow-auto">
+            <div className="w-9/12 h-4/3 mx-auto sm:mt-10 rounded-md overflow-auto">
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex flex-col items-center">
                         <h2 className="text-3xl text-orange-500 font-bold">Transferir</h2>
