@@ -14,14 +14,27 @@ Olá, futuro(a) parceiro(a) de equipe aqui está o meu projeto deste code challe
 
 ## Instalação
 
+## Server App
+
 1. Na pasta SERVER, execute o comando:
 
 ```bash
   npm i
+  npx prisma db pull
+  npx prisma migrate dev
 ```
 
-Depois inicialize o projeto
+2. Execute o SERVER:
 
 ```bash
-npm run dev
+  npm run dev
+```
+
+## Web App
+
+1. Na pasta WEB, execute o comando:
+
+```bash
+  npm i
+  npm run dev
 ```
