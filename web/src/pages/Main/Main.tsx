@@ -1,7 +1,6 @@
 import { maskCPF } from "../../utils/maskCPF";
 import { useContext, useState } from "react";
 import { TitlesMain } from "../../components/molecules/TitlesMain";
-import { Button } from "../../components/atoms/Button";
 import { AuthContext } from "../../context/AuthContext";
 import { SubmitHandler, useForm } from "react-hook-form";
 import ButtonNav from "../../components/atoms/ButtonNav";
@@ -52,16 +51,16 @@ function Main() {
                                     },
                                     value: cpf,
                                 })}
-                                className="w-full sm:w-96 h-11 px-4 py-2 border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 sm:text-3xl text-lg text-center"
+                                className="input-variant-one mt-10  text-lg w-44 2xl:w-full 2xl:text-3xl"
                             />
                         </div>
 
-                        <div className="space-x-1 sm:space-x-5 flex justify-center flex-wrap">
-                            <button type="submit" className="btn-variant-one mt-10">
+                        <div className="space-x-1 sm:space-x-5 flex justify-center max-[340px]:text-sm">
+                            <button type="submit" className="btn-variant-one mt-10 max-[340px]:w-20">
                                 VAMOS LÁ!
                             </button>
                             <Link to="/signup">
-                                <button className="btn-variant-one mt-10">REGISTRAR</button>
+                                <button className="btn-variant-one mt-10 max-[340px]:w-22">REGISTRAR</button>
                             </Link>
                         </div>
                     </form>
