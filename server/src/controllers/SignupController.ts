@@ -12,12 +12,12 @@ interface ISignupData {
 const SignupController = async (request: Request, response: Response) => {
     const { cpf, fullname }: ISignupData = request.body;
 
-    const cpfWithoutMasks = cpf.replace(/[^\d]+/g, "");
-
     if (!cpf || !fullname) {
         response.status(401).json({ message: "U can't send data empty." });
         return;
     }
+
+    const cpfWithoutMasks = cpf.replace(/[^\d]+/g, "");
 
     if (!isValidCPF(cpf)) {
         response.status(400).json({ message: "Invalid CPF!" });
