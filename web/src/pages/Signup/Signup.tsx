@@ -61,11 +61,7 @@ export function Signup() {
 
                             <input
                                 autoComplete="off"
-                                {...(register("cpf"),
-                                {
-                                    minLength: 14,
-                                    maxLength: 14,
-                                })}
+                                {...register("cpf")}
                                 onChange={handleChangeMask}
                                 value={value}
                                 placeholder="123.456.178-12"
