@@ -41,31 +41,38 @@ export function Signup() {
                     </h2>
                 </div>
 
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
                     <div className="flex sm:space-x-5 2xl:space-x-10 flex-wrap justify-center">
                         <div>
                             <h2>Qual é o seu nome completo?</h2>
                             <input
                                 {...register("fullname")}
                                 placeholder="Nome completo..."
-                                className=" h-7  border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
+                                className="input-variant-one"
                             />
                         </div>
 
-                        <div className="">
-                            <h2 className="">Me informa um CPF válido</h2>
+                        <div>
+                            <div>
+                                <h2>Me informa um CPF válido</h2>
+                            </div>
+
                             <input
                                 autoComplete="off"
-                                {...register("cpf")}
-                                onChange={handleChangeMask}
-                                value={value}
+                                {...(register("cpf"),
+                                {
+                                    onChange: handleChangeMask,
+                                    minLength: 14,
+                                    maxLength: 14,
+                                    value: value,
+                                })}
                                 placeholder="123.456.178-12"
-                                className=" h-7  border-b-2 mt-14 bg-transparent border-gray-600 outline-none  focus:border-orange-500 text-gray-200 lg:text-3xl text-lg text-center"
+                                className="input-variant-one"
                             />
                         </div>
                     </div>
 
-                    <div className="">
+                    <div>
                         <button className="btn-variant-one  mt-5 sm:mt-10">CADASTRAR</button>
                     </div>
                 </form>
