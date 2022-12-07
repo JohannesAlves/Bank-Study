@@ -14,7 +14,7 @@ Olá, futuro(a) parceiro(a) de equipe aqui está o meu projeto deste code challe
 
 ## Instalação
 
-Instale web & server com npm
+1. Na pasta SERVER, execute o comando:
 
 ```bash
   npm i
