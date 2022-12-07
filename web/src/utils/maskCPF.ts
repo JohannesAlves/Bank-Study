@@ -1,4 +1,7 @@
 export const maskCPF = (v: string) => {
+    if (v.length > 14) {
+        return "";
+    }
     v = v.replace(/\D/g, "");
 
     if (v.length <= 11) {
