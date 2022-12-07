@@ -3,6 +3,7 @@ import { maskCPF } from "../../utils/maskCPF";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/atoms/Loading/Loading";
 
 interface FormValues {
     cpf: string;
@@ -11,6 +12,7 @@ interface FormValues {
 
 export function Signup() {
     const [value, setValue] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const { register, handleSubmit } = useForm<FormValues>();
     const navigate = useNavigate();
 
@@ -21,12 +23,12 @@ export function Signup() {
     }
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
-        console.log(data);
-
         try {
+            setIsLoading(true);
             const response = await api.post("/signup", data);
             if (response) {
                 alert("Registrado com sucesso");
+                setIsLoading(false);
                 navigate("/");
             }
         } catch (error) {
@@ -34,9 +36,9 @@ export function Signup() {
         }
     };
 
-    return (
-        <>
-            <div className="flex flex-row justify-center text-center text-slate-300  2xl:w-full 2xl:h-full flex-wrap ">
+    function Form() {
+        return (
+            <>
                 <div>
                     <h2 className="text-xl 2xl:text-2xl font-mono mt-10 ">
                         Hmmm, parece que você ainda não é registrado.
@@ -74,6 +76,14 @@ export function Signup() {
                         <button className="btn-variant-one  mt-5 sm:mt-10">CADASTRAR</button>
                     </div>
                 </form>
+            </>
+        );
+    }
+
+    return (
+        <>
+            <div className="flex flex-row justify-center text-center text-slate-300  2xl:w-full 2xl:h-full flex-wrap ">
+                {isLoading ? <Loading /> : <Form />}
             </div>
         </>
     );

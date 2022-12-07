@@ -5,6 +5,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import { api } from "../../../api/api";
 import { TwoDecimalsNumber } from "../../../utils/2DecimalsNumber";
 import { ToastContainer, toast } from "react-toastify";
+import Loading from "../../atoms/Loading/Loading";
 import "react-toastify/dist/ReactToastify.css";
 
 interface FormValues {
@@ -12,12 +13,12 @@ interface FormValues {
 }
 
 export function ProfileDeposit() {
+    const [isLoading, setIsLoading] = useState(false);
     const { register, handleSubmit, setValue } = useForm<FormValues>();
     const { user } = useContext(AuthContext);
     const [amount, setAmount] = useState("R$0.00");
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
-        console.log(data);
         const amountToNumber = Number(data.amount);
         const amountToDecimal = Number(TwoDecimalsNumber(amountToNumber));
 
@@ -50,7 +51,9 @@ export function ProfileDeposit() {
 
         try {
             if (user.fullname) {
+                setIsLoading(true);
                 const response = await api.post("/deposit", { amount: amountToDecimal });
+                setIsLoading(false);
                 if (response) {
                     toast.success("Depósito realizado com sucesso.", {
                         position: "top-center",
@@ -80,9 +83,9 @@ export function ProfileDeposit() {
         }
     };
 
-    return (
-        <>
-            <div className=" w-9/12 h-4/3 mx-auto sm:mt-10 rounded-md overflow-auto">
+    function Deposit() {
+        return (
+            <>
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex flex-col items-center">
                         <h2 className="text-3xl text-orange-500 font-bold">Depósito</h2>
@@ -149,8 +152,14 @@ export function ProfileDeposit() {
                         </div>
                     </form>
                 </div>
-            </div>
+            </>
+        );
+    }
+
+    return (
+        <div className=" w-9/12 h-4/3 mx-auto sm:mt-10 rounded-md overflow-auto">
+            {isLoading ? <Loading /> : <Deposit />}
             <ToastContainer />;
-        </>
+        </div>
     );
 }
