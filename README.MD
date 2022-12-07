@@ -11,6 +11,7 @@ Olá, futuro(a) parceiro(a) de equipe aqui está o meu projeto deste code challe
 -   Transferência e Depósito
 -   Login
 -   Registro
+-   Histório de depósitos e transferências
 
 ## Instalação
 
