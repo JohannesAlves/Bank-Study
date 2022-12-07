@@ -7,6 +7,10 @@ const prisma = new PrismaClient();
 async function verifyUserExist(request: Request, response: Response, next: NextFunction) {
     const { cpf } = request.body;
 
+    if (!cpf) {
+        return response.status(400).json({ message: "U can't send empty cpf." });
+    }
+
     if (!isValidCPF(cpf)) {
         response.status(400).json({ message: "Invalid CPF!" });
         return;
