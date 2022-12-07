@@ -11,16 +11,15 @@ interface FormValues {
 }
 
 export function Signup() {
-    const [cpf, setCPF] = useState("");
+    const [value, setValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const { register, handleSubmit, setValue, getValues } = useForm<FormValues>();
+    const { register, handleSubmit } = useForm<FormValues>();
     const navigate = useNavigate();
 
     function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
         const { value } = event.currentTarget;
 
-        setValue("cpf", maskCPF(value));
-        setCPF(maskCPF(value));
+        setValue(maskCPF(value));
     }
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
@@ -64,11 +63,9 @@ export function Signup() {
 
                             <input
                                 autoComplete="off"
-                                {...(register("cpf"),
-                                {
-                                    minLength: 14,
-                                    maxLength: 14,
-                                })}
+                                {...register("cpf")}
+                                onChange={handleChangeMask}
+                                value={value}
                                 placeholder="123.456.178-12"
                                 className="input-variant-one max-[615px]:w-44 max-[615px]:text-sm"
                             />
