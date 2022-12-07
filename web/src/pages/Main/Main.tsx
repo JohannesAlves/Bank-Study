@@ -57,7 +57,7 @@ function Main() {
 
                         <div className="space-x-1 sm:space-x-5 flex justify-center max-[340px]:text-sm">
                             <button type="submit" className="btn-variant-one mt-10 max-[340px]:w-20">
-                                VAMOS LÁ!
+                                ENTRAR
                             </button>
                             <Link to="/signup">
                                 <button className="btn-variant-one mt-10 max-[340px]:w-22">REGISTRAR</button>
