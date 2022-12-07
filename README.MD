@@ -4,7 +4,7 @@ Olá, futuro(a) parceiro(a) de equipe aqui está o meu projeto deste code challe
 
 ## Demonstração
 
-GIF DO PROJETO
+![](https://github.com/JohannesAlves/DigitalRepublic/blob/master/APP.gif)
 
 ## Funcionalidades
 
