@@ -14,7 +14,15 @@ export function Signup() {
     const { register, handleSubmit } = useForm<FormValues>();
     const navigate = useNavigate();
 
+    function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
+        const { value } = event.currentTarget;
+
+        setValue(maskCPF(value));
+    }
+
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
+        console.log(data);
+
         try {
             const response = await api.post("/signup", data);
             if (response) {
@@ -25,12 +33,6 @@ export function Signup() {
             alert("Algo de errado aconteceu!");
         }
     };
-
-    function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
-        const { value } = event.currentTarget;
-
-        setValue(maskCPF(value));
-    }
 
     return (
         <>
@@ -61,11 +63,11 @@ export function Signup() {
                                 autoComplete="off"
                                 {...(register("cpf"),
                                 {
-                                    onChange: handleChangeMask,
                                     minLength: 14,
                                     maxLength: 14,
-                                    value: value,
                                 })}
+                                onChange={handleChangeMask}
+                                value={value}
                                 placeholder="123.456.178-12"
                                 className="input-variant-one"
                             />
