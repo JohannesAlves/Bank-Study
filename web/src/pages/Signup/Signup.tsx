@@ -33,7 +33,6 @@ export function Signup() {
                 navigate("/");
             }
         } catch (error) {
-            setIsLoading(false);
             alert("Algo de errado aconteceu!");
         }
     };
@@ -67,13 +66,8 @@ export function Signup() {
                                 autoComplete="off"
                                 {...(register("cpf"),
                                 {
-                                    maxLength: 14,
                                     minLength: 14,
-                                    required: true,
-                                    onChange: (event) => {
-                                        const { value } = event.currentTarget;
-                                        setValue("cpf", value);
-                                    },
+                                    maxLength: 14,
                                 })}
                                 placeholder="123.456.178-12"
                                 className="input-variant-one max-[615px]:w-44 max-[615px]:text-sm"
