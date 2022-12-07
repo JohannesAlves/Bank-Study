@@ -12,14 +12,15 @@ interface FormValues {
 
 export function Signup() {
     const [isLoading, setIsLoading] = useState(false);
-    const [value, setValue] = useState("");
-    const { register, handleSubmit } = useForm<FormValues>();
+    const [cpf, setCpf] = useState("");
+    const { register, handleSubmit, setValue } = useForm<FormValues>();
     const navigate = useNavigate();
 
     function handleChangeMask(event: React.FormEvent<HTMLInputElement>) {
         const { value } = event.currentTarget;
 
-        setValue(maskCPF(value));
+        setCpf(maskCPF(value));
+        setValue("cpf", value);
     }
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
@@ -36,40 +37,6 @@ export function Signup() {
             alert("Algo de errado aconteceu!");
         }
     };
-
-    function Inputs() {
-        return (
-            <div className="flex sm:space-x-5 2xl:space-x-10 flex-wrap justify-center ">
-                <div>
-                    <h2>Qual é o seu nome completo?</h2>
-                    <input
-                        {...register("fullname")}
-                        placeholder="Nome completo..."
-                        className="input-variant-one max-[615px]:w-44 max-[615px]:text-sm"
-                    />
-                </div>
-
-                <div>
-                    <div>
-                        <h2>Me informa um CPF válido</h2>
-                    </div>
-
-                    <input
-                        autoComplete="off"
-                        {...(register("cpf"),
-                        {
-                            onChange: handleChangeMask,
-                            value: value,
-                        })}
-                        onChange={handleChangeMask}
-                        value={value}
-                        placeholder="123.456.178-12"
-                        className="input-variant-one max-[615px]:w-44 max-[615px]:text-sm"
-                    />
-                </div>
-            </div>
-        );
-    }
 
     function Signup() {
         if (isLoading) {
@@ -108,10 +75,8 @@ export function Signup() {
                                             onChange: handleChangeMask,
                                             minLength: 14,
                                             maxLength: 14,
-                                            value: value,
+                                            value: cpf,
                                         })}
-                                        onChange={handleChangeMask}
-                                        value={value}
                                         placeholder="123.456.178-12"
                                         className="input-variant-one max-[615px]:w-44 max-[615px]:text-sm"
                                     />
