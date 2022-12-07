@@ -44,13 +44,13 @@ export function Signup() {
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-                    <div className="flex sm:space-x-5 2xl:space-x-10 flex-wrap justify-center">
+                    <div className="flex sm:space-x-5 2xl:space-x-10 flex-wrap justify-center ">
                         <div>
                             <h2>Qual é o seu nome completo?</h2>
                             <input
                                 {...register("fullname")}
                                 placeholder="Nome completo..."
-                                className="input-variant-one"
+                                className="input-variant-one max-[615px]:w-44 max-[615px]:text-sm"
                             />
                         </div>
 
@@ -65,7 +65,7 @@ export function Signup() {
                                 onChange={handleChangeMask}
                                 value={value}
                                 placeholder="123.456.178-12"
-                                className="input-variant-one"
+                                className="input-variant-one max-[615px]:w-44 max-[615px]:text-sm"
                             />
                         </div>
                     </div>
