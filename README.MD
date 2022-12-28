@@ -1,7 +1,3 @@
-# Digital Republic Code Challenge
-
-Olá, futuro(a) parceiro(a) de equipe aqui está o meu projeto deste code challenge.
-
 Sobre o projeto:
 
 ### <strong>FRONT-END</strong> <br/>
