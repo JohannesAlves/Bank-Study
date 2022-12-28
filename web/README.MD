@@ -25,10 +25,3 @@
 ### Start
 
     1. Iniciar a consumir as APIs principais do Login.
-
-### Adicionais/Rever/Não esquecer.
-
-    1. Responsividade
-    2. Protected Routes
-
-    ##
