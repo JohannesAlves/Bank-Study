@@ -16,7 +16,7 @@ O express como o mais conhecido framework de Node.JS foi minha decisão para abr
 Nas questões de segurança estou utilizando JWT Token com as rotas necessárias de autenticação.
 
 ## Demonstração
-https://digitalrepublicweb.onrender.com/
+https://bankstudy.onrender.com/
 ![](https://github.com/JohannesAlves/DigitalRepublic/blob/master/APP.gif)
 
 ## Funcionalidades
